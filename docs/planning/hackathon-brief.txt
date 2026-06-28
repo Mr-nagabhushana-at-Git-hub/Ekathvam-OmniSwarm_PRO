@@ -1,0 +1,43 @@
+This is the start of the #g4hackathon-multiverse-agents channel. Multiverse Agents - Best Multi-Agent + Multimodal Use Case (2K)
+- Agent Collaboration: Effective coordination between multiple AI agents
+- Multimodal Intelligence: Meaningful use of Gemma 4 31B with text, images, and video
+- Speed in Action: Demonstrates the impact of Cerebras' ultra-fast inference
+- Innovation: Creative, outside-the-box applications that leverage Gemma 4 31B, including physical AI, robotics, embodied agents, or other real-world systems (Examples include Reachy robots, 3D printing workflows, smart manufacturing, autonomous labs, IoT, and other physical-world integrations.)
+
+Demo Video Requirements
+- Maximum length: 60 seconds
+- Show Cerebras speed: Clearly demonstrate how fast inference improves the user experience
+- Recommended: Include a side-by-side comparison with a GPU-based provider to highlight latency improvements
+- Protect your privacy: If recording your desktop, ensure no personal or sensitive information is visible.
+
+
+------------->
+This is the start of the #g4hackathon-people-choice channel. People’s choice - Most Impressions on Social Media (2K)
+- Organic Reach: Highest number of organic impressions on Twitter/X (no paid promotion/amplification)
+- Community Engagement: Strong engagement through likes, comments, reposts, and discussions
+- Content Quality: Clear, compelling, and creative showcase of the project
+Authenticity: Genuine community excitement around the project and Cerebras + Gemma 4 31B
+
+Demo Video Requirements
+- Maximum length: 60 seconds
+- Show Cerebras speed: Clearly demonstrate how fast inference improves the user experience
+- Recommended: Include a side-by-side comparison with a GPU-based provider to highlight latency improvements
+- Focus on your project: Showcase the key features, workflow, and impact
+Protect your privacy: If recording your desktop, ensure no personal or sensitive information is visible (e.g. notifications, browser tabs, API keys, emails, or credentials)
+
+---------->
+
+This is the start of the #g4hackathon-enterprise-impact channel. Enterprise Impact - Best Enterprise Use Case (1K)
+- Business Impact: Solves a meaningful enterprise challenge such as enterprise search, multimodal RAG, incident response, cybersecurity, customer support, or knowledge management
+- Production Readiness: Scalable, secure, and deployable in real-world environments
+- Technical Excellence: Thoughtful architecture and high-quality implementation
+- AI Differentiation: Demonstrates how Cerebras speed and Gemma 4 31B's multimodal capabilities create a better enterprise experience
+
+Demo Video Requirements
+- Maximum length: 60 seconds
+- Show Cerebras speed: Clearly demonstrate how fast inference improves the user experience
+- Recommended: Include a side-by-side comparison with a GPU-based provider to highlight latency improvements
+- Protect your privacy: If recording your desktop, ensure no personal or sensitive information is visible (e.g. notifications, browser tabs, API keys, emails, or credentials)
+
+
+< make sure the product developed will support all 3 tracks ! > 

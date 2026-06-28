@@ -1,0 +1,478 @@
+{
+  "slots": {
+    "app_name": "Ekathvam-OmniSwarm (OmniSwarm by Ekathvam) — a dual/\"Twin Engine\" multi-agent orchestrator",
+    "goal": "Win the Gemma 4 (g4) hackathon by shipping a strong, real product: a Gemma 4 31B + Cerebras-powered multi-agent swarm delivered as a dual architecture (Vercel Next.js web app + Google Colab Python/Gradio notebook) that simultaneously satisfies all 3 tracks — Multiverse Agents, People's Choice, and Enterprise Impact.",
+    "users": "Hackathon judges (technical/AI-engineer judges who download the Colab notebook and paste their own key to verify; product judges & VCs evaluating the Vercel app; enterprise judges), enterprise end-users, and the Twitter/X developer community (People's Choice impressions). Each user supplies their own Cerebras/provider API key in the UI.",
+    "core_features": "Multi-agent swarm orchestration pipeline (Plan → Research with tools → Parallel role-specialized swarm → Synthesize → Critic⇄Refiner loop → VM code extract); role-specialized nodes (analyst/risk/strategist/builder); dynamic worker count (planner picks 2–5 nodes); structured skill-agents-mapped worker (must be built 100% from scratch); multimodal intelligence with Gemma 4 31B (text, images, video); live web-search tool (DuckDuckGo) + tool-augmented researcher + system-diagnostic/run-python tools; Cerebras ultra-fast inference with a latency counter (Time-to-First-Token + output tokens/sec, 300+ tok/s) and side-by-side GPU-provider latency comparison; user-pasted API key (no backend storage); advanced dual-encrypted TEE (Trusted Encrypted Environment) + defence-in-depth architecture; \"Delete",
+    "tech_stack": "Web (Engine A): Next.js + React + Tailwind UI on Vercel, backend as Vercel Serverless Edge Function in Node.js/TypeScript (app/api/swarm/route.ts); Proof-of-concept (Engine B): Python in Google Colab with a Gradio UI (supreme_omni_orchestrator.py / super_adaptive_agent_architecture.py, UniversalLLM classes); Model: Gemma 4 31B (gemma-4-31b); Inference: Cerebras Cloud API (direct calls from both engines); Python libs: httpx, nest_asyncio, google-genai, openai, anthropic, groq, duckduckgo-search; License: AGPLv3.",
+    "constraints": "API key must NOT be stored in the backend — user fetches and pastes it in the UI; do not store, sell, or allow provider training on user data (align with new Indian govt data rules) — enforce via dual-encrypted TEE + defence-in-depth + delete-my-data; product must support all 3 hackathon tracks; demo video max 60s, must show Cerebras speed and a side-by-side GPU comparison, with no sensitive info (notifications, tabs, keys, emails, credentials) visible; People's Choice reach must be organic only (no paid promotion); avoid creating README.md / feature-update / redundant .md files in the main coding folder (save tokens) — focus on deep research + engineered implementation; ORCMEGA plans in C:\\AGENT\\ORCMEGA-plan,info,docs and creates a new folder for the actual build; references live in C:\\AG",
+    "success_criteria": "1st place across all three tracks; multi-agent orchestration is real and reproducible (judges paste their own key in the Colab notebook and it runs — verified working in Colab); demonstrable Cerebras speed advantage (TTFT + 300+ tokens/sec, clear side-by-side latency win vs a GPU provider); production-ready, scalable, secure enterprise web app on Vercel; meaningful multimodal Gemma 4 31B usage (text/images/video); high organic Twitter/X impressions and engagement; innovative privacy layer (dual-encrypted TEE / no-store / no-sell / no-train) as a standout differentiator."
+  },
+  "project": {
+    "rootPath": "C:\\AGENT\\references-INITIAL-info,code,details",
+    "briefPaths": [
+      "C:\\AGENT\\goal_start_here.txt",
+      "C:\\AGENT\\ORCMEGA-plan,info,docs\\hackthon-req.txt",
+      "C:\\AGENT\\ORCMEGA-plan,info,docs\\vercell_compatable.md.txt"
+    ],
+    "outputDir": "C:\\AGENT\\ORCMEGA-plan,info,docs\\run-strong-340b",
+    "brief": "--- goal_start_here.txt ---\nhay I have put all details abt hackthon & all codes I had & all the responces gemini pro said \r\n\r\n> so go through everything & also see that gemini said abt dual articture to win the hackthon \r\n\r\n> use that provider's api key integration don't put it in backend let user go & fetch the api & paste in ui to make the app work \r\n\r\n> see everything understand \r\n\r\n> /goal : is to WIN the hackthon [ just worry about delivering strong product ] \r\n\r\n> addon for api key if we use more encryption that user data wont go outside & get stored into the providers server we hav to innovate that security part & also delete my data which force remove every data abt person from both app & also from where ever server ++ this will be a good point to say by following Indian govt new rules we wont store & we wont sell or we wont let users data be used for training by providers in short we add a advanced dual encrypted TEE( trusted Encrypted Environment ) - Defence in depth articture , structured skill-agents mapped worker { u have to create this ! in 100% } \r\n\r\n\"C:\\AGENT\\ORCMEGA-plan,info,docs\" - ORCMEGA WILL PLAN HERE & create a new folder & start the coding part & core building \r\n\r\n\r\n\"C:\\AGENT\\references-INITIAL-info,code,details\" - all details i mentioned above is inside here ! \r\n\r\n\r\nNOTE : AVOID CREATING  readme.md , feature update .md , that md this md ....... in main coding folder  save tokens by not creating redundant text files ! focus on deep research & engineered implementations \n\n--- hackthon-req.txt ---\nThis is the start of the #g4hackathon-multiverse-agents channel. Multiverse Agents - Best Multi-Agent + Multimodal Use Case (2K)\r\n- Agent Collaboration: Effective coordination between multiple AI agents\r\n- Multimodal Intelligence: Meaningful use of Gemma 4 31B with text, images, and video\r\n- Speed in Action: Demonstrates the impact of Cerebras' ultra-fast inference\r\n- Innovation: Creative, outside-the-box applications that leverage Gemma 4 31B, including physical AI, robotics, embodied agents, or other real-world systems (Examples include Reachy robots, 3D printing workflows, smart manufacturing, autonomous labs, IoT, and other physical-world integrations.)\r\n\r\nDemo Video Requirements\r\n- Maximum length: 60 seconds\r\n- Show Cerebras speed: Clearly demonstrate how fast inference improves the user experience\r\n- Recommended: Include a side-by-side comparison with a GPU-based provider to highlight latency improvements\r\n- Protect your privacy: If recording your desktop, ensure no personal or sensitive information is visible.\r\n\r\n\r\n------------->\r\nThis is the start of the #g4hackathon-people-choice channel. People’s choice - Most Impressions on Social Media (2K)\r\n- Organic Reach: Highest number of organic impressions on Twitter/X (no paid promotion/amplification)\r\n- Community Engagement: Strong engagement through likes, comments, reposts, and discussions\r\n- Content Quality: Clear, compelling, and creative showcase of the project\r\nAuthenticity: Genuine community excitement around the project and Cerebras + Gemma 4 31B\r\n\r\nDemo Video Requirements\r\n- Maximum length: 60 seconds\r\n- Show Cerebras speed: Clearly demonstrate how fast inference improves the user experience\r\n- Recommended: Include a side-by-side comparison with a GPU-based provider to highlight latency improvements\r\n- Focus on your project: Showcase the key features, workflow, and impact\r\nProtect your privacy: If recording your desktop, ensure no personal or sensitive information is visible (e.g. notifications, browser tabs, API keys, emails, or credentials)\r\n\r\n---------->\r\n\r\nThis is the start of the #g4hackathon-enterprise-impact channel. Enterprise Impact - Best Enterprise Use Case (1K)\r\n- Business Impact: Solves a meaningful enterprise challenge such as enterprise search, multimodal RAG, incident response, cybersecurity, customer support, or knowledge management\r\n- Production Readiness: Scalable, secure, and deployable in real-world environments\r\n- Technical Excellence: Thoughtful architecture and high-quality implementation\r\n- AI Differentiation: Demonstrates how Cerebras speed and Gemma 4 31B's multimodal capabilities create a better enterprise experience\r\n\r\nDemo Video Requirements\r\n- Maximum length: 60 seconds\r\n- Show Cerebras speed: Clearly demonstrate how fast inference improves the user experience\r\n- Recommended: Include a side-by-side comparison with a GPU-based provider to highlight latency improvements\r\n- Protect your privacy: If recording your desktop, ensure no personal or sensitive information is visible (e.g. notifications, browser tabs, API keys, emails, or credentials)\r\n\r\n\r\n< make sure the product developed will support all 3 tracks ! >\n\n--- referenced folder ORCMEGA-plan,info,docs (3 files) ---\nhackthon-req.txt\nvercell_compatable.md.txt\n\n### hackthon-req.txt\nThis is the start of the #g4hackathon-multiverse-agents channel. Multiverse Agents - Best Multi-Agent + Multimodal Use Case (2K)\r\n- Agent Collaboration: Effective coordination between multiple AI agents\r\n- Multimodal Intelligence: Meaningful use of Gemma 4 31B with text, images, and video\r\n- Speed in Action: Demonstrates the impact of Cerebras' ultra-fast inference\r\n- Innovation: Creative, outside-the-box applications that leverage Gemma 4 31B, including physical AI, robotics, embodied agents, or other real-world systems (Examples include Reachy robots, 3D printing workflows, smart manufacturing, autonomous labs, IoT, and other physical-world integrations.)\r\n\r\nDemo Video Requirements\r\n- Maximum length: 60 seconds\r\n- Show Cerebras speed: Clearly demonstrate how fast inference improves the user experience\r\n- Recommended: Include a side-by-side comparison with a GPU-based provider to highlight latency improvements\r\n- Protect your privacy: If recording your desktop, ensure no personal or sensitive information is visible.\r\n\r\n\r\n------------->\r\nThis is the start of the #g4hackathon-people-choice channel. People’s choice - Most Impressions on Social Media (2K)\r\n- Organic Reach: Highest number of organic impressions on Twitter/X (no paid promotion/amplification)\r\n- Community Engagement: Strong engagement through likes, comments, reposts, and discussions\r\n- Content Quality: Clear, compelling, and creative showcase of the project\r\nAuthenticity: Genuine community excitement around the project and Cerebras + Gemma 4 31B\r\n\r\nDemo Video Requirements\r\n- Maximum length: 60 seconds\r\n- Show Cerebras speed: Clearly demonstrate how fast inference improves the user experience\r\n- Recommended: Include a side-by-side comparison with a GPU-based provider to highlight latency improvements\r\n- Focus on your project: Showcase the key features, workflow, and impact\r\nProtect your privacy: If recording your desktop, ensure no personal or sensitive information is visible (e.g. notifications, browser tabs, API keys, emails, or credentials)\r\n\r\n---------->\r\n\r\nThis is the start of the #g4hackathon-enterprise-impact channel. Enterprise Impact - Best Enterprise Use Case (1K)\r\n- Business Impact: Solves a meaningful enterprise challenge such as enterprise search, multimodal RAG, incident response, cybersecurity, customer support, or knowledge management\r\n- Production Readiness: Scalable, secure, and deployable in real-world environments\r\n- Technical Excellence: Thoughtful architecture and high-quality implementation\r\n- AI Differentiation: Demonstrates how Cerebras speed and Gemma 4 31B's multimodal capabilities create a better enterprise experience\r\n\r\nDemo Video Requirements\r\n- Maximum length: 60 seconds\r\n- Show Cerebras speed: Clearly demonstrate how fast inference improves the user experience\r\n- Recommended: Include a side-by-side comparison with a GPU-based provider to highlight latency improvements\r\n- Protect your privacy: If recording your desktop, ensure no personal or sensitive information is visible (e.g. notifications, browser tabs, API keys, emails, or credentials)\r\n\r\n\r\n< make sure the product developed will support all 3 tracks ! > \n\n\n--- referenced folder references-INITIAL-info,code,details (11 files) ---\ngithub info.txt\nit_works_in_colab-tested- it has worked !!.txt\nNew Text Document (2).txt\nNew Text Document (3).txt\nNew Text Document (4).txt\nNew Text Document (5).txt\nNew Text Document (6).txt\nNew Text Document (7).txt\nNew Text Document.txt\nsuper_adaptive_agent_architecture.py\nsupreme_omni_orchestrator.py\n\n### github info.txt\necho \"# Ekathvam-OmniSwarm\" >> README.md\r\ngit init\r\ngit add README.md\r\ngit commit -m \"first commit\"\r\ngit branch -M main\r\ngit remote add origin https://github.com/Mr-nagabhushana-at-Git-hub/Ekathvam-OmniSwarm.git\r\ngit push -u origin main\n\n### it_works_in_colab-tested- it has worked !!.txt\nimport os\nimport sys\nimport json\nimport time\nimport asyncio\nimport subprocess\nimport re\nimport tempfile\nimport logging\n\n# ===========================================================================\n#  OMNI SUPREME ORCHESTRATOR  v3  (Google Colab edition)\n# ---------------------------------------------------------------------------\n#  A unified, provider-agnostic multi-agent engine that fuses three designs:\n#    • Multi-provider Gradio swarm        (Gemini / OpenAI / Anthropic / Groq)\n#    • Live Web Preview + Colab-VM Python console\n#    • Tool-augmented Researcher + specialized agents + resilient retries\n#\n#  Pipeline:  Plan ──► [Research (tools)] ──► Parallel Swarm ──► Synthesize\n#                                               │\n#                                               ▼\n#                                       Critic ⇄ Refiner loop ──► VM extract\n#\n#  Upgrades over the originals:\n#    - Dynamic worker count (planner decides 2–5 nodes, not a fixed 3)\n#    - Role-specialized swarm nodes (analyst / risk / strategist / builder)\n#    - Real web-search tool (DuckDuckGo, no API key) the Researcher can call\n#    - Provider-agnostic resilience: exponential backoff on 429/5xx/overload\n#    - Per-node error isolation (one failed node never kills the run)\n#    - UI controls: enable tools, worker count, refinement depth\n#    - Structured telemetry / logging\n# ===========================================================================\n\n\ndef install_dependencies():\n    \"\"\"Installs required packages dynamically in Google Colab.\"\"\"\n    print(\"[+] Initializing Supreme Environment...\")\n    packages = [\n        \"gradio\",\n        \"nest_asyncio\",\n        \"httpx\",\n        \"google-genai\",\n        \"openai\",\n        \"anthropic\",\n        \"groq\",\n        \"duckduckgo-search\",   # free, no-API-key web search for the Researcher\n    ]\n    for pkg in packages:\n        print(f\"    -> Installing {pkg}...\")\n        subprocess.check_call([sys.executable, \"-m\", \"pip\", \"install\", \"-q\", pkg])\n    print(\"[+] Environment Ready.\\n\")\n\n\n# Run installation before importing external libraries\ninstall_dependencies()\n\nimport httpx\nimport nest_asyncio\nimport gradio as gr\nfrom typing import List, Dict, Any, Callable\n\n# Apply nest_asyncio to allow async/await inside Colab's existing event loop\nnest_asyncio.apply()\n\n# Structured telemetry (Phase 13: Observability, adapted from the ADK design)\nlogging.basicConfig(\n    level=logging.INFO,\n    format=\"%(asctime)s [%(levelname)s] (Orchestrator) %(message)s\",\n)\nlog = logging.getLogger(\"omni\")\n\n\n# ===========================================================================\n#  TOOLBOX  — real, provider-agnostic tools the agents can invoke\n# ===========================================================================\nclass ToolBox:\n    \"\"\"A registry of callable tools. Tools are plain Python and return text,\n    so they work identically regardless of which LLM provider is selected.\"\"\"\n\n    @staticmethod\n    def web_search(query: str, max_results: int = 5) -> str:\n        \"\"\"Live web search via DuckDuckGo (no API key required).\"\"\"\n        try:\n            try:\n                from duckduckgo_search import DDGS          # classic package name\n            except ImportError:\n                from ddgs import DDGS                         # newer renamed package\n            results = []\n            with DDGS() as ddgs:\n                for r in ddgs.text(query, max_results=max_results):\n                    results.append(f\"- {r.get('title','')}: {r.get('body','')} ({r.get('href','')})\")\n            return \"\\n\".join(results) if results else \"No web results found.\"\n        except Exception as e:\n            return f\"[web_search error: {e}]\"\n\n    @staticmethod\n    def system_diagnostic(target_system: str, metric_type: str = \"status\") -> str:\n        \"\"\"Simulated real-time systems diagnostic (enterprise demo tool from the\n        ADK design). Replace the body with a real API call in production.\"\"\"\n        log.info(f\"Tool: system_diagnostic({target_system}, {metric_type})\")\n        return json.dumps({\n            \"system\": target_system,\n            \"metric\": metric_type,\n            \"status\": \"Operational\",\n            \"current_load\": \"42%\",\n            \"uptime\": \"99.999%\",\n        })\n\n    @staticmethod\n    def run_python(code: str) -> str:\n        \"\"\"Execute Python in the Colab VM sandbox and capture output.\"\"\"\n        return execute_vm_code(code)\n\n    # registry: name -> (callable, human description for the ReAct prompt)\n    @classmethod\n    def registry(cls) -> Dict[str, Dict[str, Any]]:\n        return {\n            \"web_search\": {\n                \"fn\": cls.web_search,\n                \"desc\": \"Search the live web. args: {\\\"query\\\": \\\"...\\\"}\",\n            },\n            \"system_diagnostic\": {\n                \"fn\": cls.system_diagnostic,\n                \"desc\": \"Query a system metric. args: {\\\"target_system\\\": \\\"...\\\", \\\"metric_type\\\": \\\"...\\\"}\",\n            },\n            \"run_python\": {\n                \"fn\": cls.run_python,\n                \"desc\": \"Run Python code and get stdout/stderr. args: {\\\"code\\\": \\\"...\\\"}\",\n            },\n        }\n\n    @classmethod\n    def call(cls, name: str, args: Dict[str, Any]) -> str:\n        spec = cls.registry().get(name)\n        if not spec:\n            return f\"[unknown tool: {name}]\"\n        try:\n            return str(spec[\"fn\"](**args))\n        except Exception as e:\n            return f\"[tool {name} failed: {e}]\"\n\n    @classmethod\n    def manifest(cls) -> str:\n        return \"\\n\".join(f\"  • {n}: {s['desc']}\" for n, s in cls.registry().items())\n\n\n# ===========================================================================\n#  MODEL FETCHER  — dynamic model discovery per provider\n# ===========================================================================\nclass ModelFetcher:\n    \"\"\"Dynamically fetches available models from the selected provider's API.\"\"\"\n\n    @staticmethod\n    async def fetch_models(provider: str, api_key: str) -> List[str]:\n        if not api_ke\n\n### New Text Document (2).txt\n⚙️ The \"Twin Engine\" Architecture Explained\r\nBoth systems communicate directly with the Cerebras Cloud API. They just serve two different audiences.\r\n\r\n1. Engine A: The Vercel Web App (The Production Product)\r\nThis is a standalone Next.js application. It does not need Colab at all.\r\n\r\nThe Frontend: React/Tailwind UI that looks like a high-end enterprise tool.\r\n\r\nThe Backend: The app/api/swarm/route.ts file we outlined earlier. This is a Vercel Serverless Edge Function running Node.js.\r\n\r\nHow it works: When a user types a prompt into the frontend, the Vercel Edge Function sends the requests directly to the Cerebras API, gets the responses, and streams them back to the UI.\r\n\r\nThe Goal: This is your public-facing commercial product. You can pull down the Next.js repository to your local WSL 2 environment on your OMEN, test the streaming speeds locally, and then push it straight to Vercel for the world to use.\r\n\r\n2. Engine B: The Python Colab Notebook (The Proof of Concept)\r\nThis is an isolated Python environment. It does not need Vercel at all.\r\n\r\nThe Frontend: A Gradio UI generated directly inside the notebook.\r\n\r\nThe Backend: The UniversalLLM Python classes we built.\r\n\r\nHow it works: The notebook runs entirely in the browser (or a Google VM). It sends requests directly to the Cerebras API and prints the output in the notebook.\r\n\r\nThe Goal: This is your open-source technical proof. It exists solely so that a highly technical judge can download your code, paste in their own Cerebras API key, and instantly verify that your multi-agent architecture is real and not just a faked video.\r\n\r\n🏆 Why Build Both?\r\nBuilding both is about maximizing your Return on Investment (ROI) across the judging panels.\r\n\r\nIf you only submit a Vercel app: Technical judges will assume you faked the multi-agent orchestration behind a sleek UI and give you a low score for technical depth.\r\n\r\nIf you only submit a Colab notebook: Enterprise and product judges will look at the raw Python code and assume it is just a university research project with no commercial viability.\r\n\r\nBy submitting both, you trap the judges. The Vercel app proves you can build a scalable, high-speed enterprise product (Track 3). The Colab notebook proves your underlying multi-agent codebase is structurally flawless and reproducible (Track 1).\r\n\r\nYou build the logic once, translate it into two different languages (Python for Colab, TypeScript for Vercel), and deploy them side-by-side.\n\n### New Text Document (3).txt\nSubmission LayerTarget AudienceCore PurposeJudging Metric SatisfiedGoogle Colab NotebookTechnical Judges & AI EngineersCode reproducibility, architectural verification, and open-source transparency.Track 1: Multiverse Agents (Mechanics & Code Precision)Vercel Web App (Next.js)Product Judges & Venture CapitalistsProduction readiness, user experience, market scalability, and real-time inference speed demonstration.Track 3: Enterprise Impact (Commercial Viability)Why Relying on Only One Limits Your ChancesWhy \"Just Colab\" Won't Win 1st PlaceA Google Colab notebook proves your code works, but it lacks the visual polish required to make a lasting impression in a 60-second video. Judges reviewing hundreds of applications will glaze over a raw code block or a basic Gradio interface. It signals a \"research project\" or a school assignment rather than a fully realized software solution ready for market integration.Why \"Just a Web App\" Risks SkepticismConversely, submitting only a sleek web application without an accessible runtime notebook can raise red flags. Technical judges frequently suspect that complex multi-agent architectures or lightning-fast token counts are hardcoded or simulated behind a glamorous UI. The notebook provides the raw, unedited validation that your parallel swarm engine operates exactly as claimed.The Winning Workflow (How to Build Both Without Extra Work)You do not need to build two separate projects from scratch. Instead, treat the Colab notebook as your core engine development environment and the Vercel app as your commercial deployment vector.1. The Core Engine (Python / Colab)Build and test your core agent framework inside your local development environment.Use the Python script to refine the system instructions, design the multi-agent orchestration loop, and verify that the gemma-4-31b model routes tasks effectively through tool calls.Save this exact, working code as your submission notebook. This is what technical judges will download and run with their own API keys to verify your codebase.2. The Production Layer (TypeScript / Vercel)Once the core system prompts and routing logic are optimized in Python, copy those exact prompt strings directly into a Next.js API route.Build a clean, professional user interface using basic React components that communicates directly with this API endpoint.This web application serves as the primary visual asset for your submission video and the public link you share on social media to build engagement.By submitting a flawless, reproducible backend notebook alongside a high-performance web interface, you satisfy every layer of the grading rubric. The notebook guarantees technical credibility, while the Vercel application demonstrates real-world enterprise execution.\n\n### New Text Document (4).txt\nProtecting your intellectual property while simultaneously maximizing public visibility is a delicate balance. Hackathons are inherently public arenas, and while ideas themselves cannot be copyrighted, the specific execution and codebase absolutely can be.\r\n\r\nHere is the exact, exhaustive strategy to lock down your codebase and engineer your submission to dominate the judges' rubrics.\r\n\r\n🛡️ 1. Bulletproofing Your Intellectual Property (IP)\r\nIf you are planning to transition this into a flagship product under Ekathvam, you must establish commercial intent and ownership boundaries from minute one.\r\n\r\nAssert Sole Technical Ownership: Do not leave ownership ambiguous. Create a formal OWNERSHIP.md file in the root of your repository. Use clear, structured Markdown to explicitly assert that you independently designed, developed, and implemented the core technical system, and that it remains your sole and exclusive intellectual property.\r\n\r\nDeploy an Aggressive Open-Source License: If you want it public but protected from enterprise theft, use the AGPLv3 License. This forces anyone who uses or modifies your code over a network (even as a backend service API) to open-source their entire application as well. Big corporations are terrified of AGPLv3; it effectively prevents them from silently stealing it for closed-source commercial gain.\r\n\r\nBrand the Architecture: Imprint the Ekathvam branding directly into the UI, the terminal outputs, and every file header. Add a copyright notice at the top of your supreme_omni_orchestrator.py and your Vercel route.ts files:\r\n// Copyright (c) 2026 Nagabhushana Raju S | Ekathvam. All Rights Reserved.\r\n\r\nObfuscate the \"Secret Sauce\": If there is a highly unique system prompt or proprietary routing logic you don't want exposed, move those specific strings into your Vercel .env file as environment variables. You can open-source the structural code while keeping the proprietary \"brain\" hidden on the server.\r\n\r\n🏆 2. Engineering the 1st Place Submission (The 60-Second Video)\r\nThe judges will review hundreds of submissions. If they don't understand exactly why your app is superior in the first 10 seconds of the video, you lose. You must exploit the dual-frontend architecture we built.\r\n\r\nThe Split-Screen Hook (0:00 - 0:15): Start with a side-by-side visual.\r\n\r\nLeft side: Your polished Next.js Vercel app (targeting Track 3: Enterprise Impact).\r\n\r\nRight side: The raw Colab terminal/Gradio UI (targeting Track 1: Multiverse Agents).\r\n\r\nShow them talking to each other instantly.\r\n\r\nThe Cerebras Speed Flex (0:15 - 0:40): This is the core judging metric. Do not just show the text streaming. Add a simple latency counter to your UI that calculates the Time to First Token (TTFT) and the Output Tokens Per Second. When the text explodes onto the screen at 300+ tokens/second, point a giant visual arrow at that metric.\r\n\r\nThe Real-World Application (0:40 - 0:60): Show the swarm doing something impossible to fake. For example, have it instantly refactor a massive, messy 500-line code snippet into clean, modular React components right before their eyes.\r\n\r\n📈 3. Dominating the \"People's Choice\" Track (Social Impressions)\r\nTo win the $2K social media prize, your post on X (Twitter) needs to break out of the standard developer bubble.\r\n\r\nThe Thumbnail & Hook: Twitter auto-plays videos on mute. The first frame must be high-contrast and visually striking. Use a text overlay on the video: \"4 AI Agents. 1 Prompt. 0.3 Seconds.\"\r\n\r\nThe Copywriting: Do not post a boring technical thesis. Post an aggressive, results-driven hook.\r\n\r\nExample: \"I got tired of waiting for AI to think. So I built a 4-agent swarm powered by @googlegemma on @Cerebras hardware. It analyzes, critiques, and builds full production apps in under a second. Watch it refactor 500 lines of legacy code instantly. 👇\"\r\n\r\nStrategic Tagging: Tag the official accounts (@Cerebras, @googlegemma), but also engage in the replies of their recent posts with a link to your demo, stating you just used their tech to build something crazy for the hackathon.\r\n\r\n💼 4. The Repository Polish\r\nYour GitHub repository must look like a mature enterprise tool, not a weekend hack.\r\n\r\nWrite a beautiful, exhaustive README.md.\r\n\r\nInclude high-quality architecture diagrams showing how the Vercel edge functions route to the multi-agent swarm.\r\n\r\nProvide a flawless \"1-Click Deploy to Vercel\" button so judges can test it themselves instantly.\n\n### New Text Document (5).txt\nProtecting your intellectual property while simultaneously maximizing public visibility is a delicate balance. Hackathons are inherently public arenas, and while ideas themselves cannot be copyrighted, the specific execution and codebase absolutely can be.\r\n\r\nHere is the exact, exhaustive strategy to lock down your codebase and engineer your submission to dominate the judges' rubrics.\r\n\r\n🛡️ 1. Bulletproofing Your Intellectual Property (IP)\r\nIf you are planning to transition this into a flagship product under Ekathvam, you must establish commercial intent and ownership boundaries from minute one.\r\n\r\nAssert Sole Technical Ownership: Do not leave ownership ambiguous. Create a formal OWNERSHIP.md file in the root of your repository. Use clear, structured Markdown to explicitly assert that you independently designed, developed, and implemented the core technical system, and that it remains your sole and exclusive intellectual property.\r\n\r\nDeploy an Aggressive Open-Source License: If you want it public but protected from enterprise theft, use the AGPLv3 License. This forces anyone who uses or modifies your code over a network (even as a backend service API) to open-source their entire application as well. Big corporations are terrified of AGPLv3; it effectively prevents them from silently stealing it for closed-source commercial gain.\r\n\r\nBrand the Architecture: Imprint the Ekathvam branding directly into the UI, the terminal outputs, and every file header. Add a copyright notice at the top of your supreme_omni_orchestrator.py and your Vercel route.ts files:\r\n// Copyright (c) 2026 Nagabhushana Raju S | Ekathvam. All Rights Reserved.\r\n\r\nObfuscate the \"Secret Sauce\": If there is a highly unique system prompt or proprietary routing logic you don't want exposed, move those specific strings into your Vercel .env file as environment variables. You can open-source the structural code while keeping the proprietary \"brain\" hidden on the server.\r\n\r\n🏆 2. Engineering the 1st Place Submission (The 60-Second Video)\r\nThe judges will review hundreds of submissions. If they don't understand exactly why your app is superior in the first 10 seconds of the video, you lose. You must exploit the dual-frontend architecture we built.\r\n\r\nThe Split-Screen Hook (0:00 - 0:15): Start with a side-by-side visual.\r\n\r\nLeft side: Your polished Next.js Vercel app (targeting Track 3: Enterprise Impact).\r\n\r\nRight side: The raw Colab terminal/Gradio UI (targeting Track 1: Multiverse Agents).\r\n\r\nShow them talking to each other instantly.\r\n\r\nThe Cerebras Speed Flex (0:15 - 0:40): This is the core judging metric. Do not just show the text streaming. Add a simple latency counter to your UI that calculates the Time to First Token (TTFT) and the Output Tokens Per Second. When the text explodes onto the screen at 300+ tokens/second, point a giant visual arrow at that metric.\r\n\r\nThe Real-World Application (0:40 - 0:60): Show the swarm doing something impossible to fake. For example, have it instantly refactor a massive, messy 500-line code snippet into clean, modular React components right before their eyes.\r\n\r\n📈 3. Dominating the \"People's Choice\" Track (Social Impressions)\r\nTo win the $2K social media prize, your post on X (Twitter) needs to break out of the standard developer bubble.\r\n\r\nThe Thumbnail & Hook: Twitter auto-plays videos on mute. The first frame must be high-contrast and visually striking. Use a text overlay on the video: \"4 AI Agents. 1 Prompt. 0.3 Seconds.\"\r\n\r\nThe Copywriting: Do not post a boring technical thesis. Post an aggressive, results-driven hook.\r\n\r\nExample: \"I got tired of waiting for AI to think. So I built a 4-agent swarm powered by @googlegemma on @Cerebras hardware. It analyzes, critiques, and builds full production apps in under a second. Watch it refactor 500 lines of legacy code instantly. 👇\"\r\n\r\nStrategic Tagging: Tag the official accounts (@Cerebras, @googlegemma), but also engage in the replies of their recent posts with a link to your demo, stating you just used their tech to build something crazy for the hackathon.\r\n\r\n💼 4. The Repository Polish\r\nYour GitHub repository must look like a mature enterprise tool, not a weekend hack.\r\n\r\nWrite a beautiful, exhaustive README.md.\r\n\r\nInclude high-quality architecture diagrams showing how the Vercel edge functions route to the multi-agent swarm.\r\n\r\nProvide a flawless \"1-Click Deploy to Vercel\" button so judges can test it themselves instantly.\n\n### New Text Document (6).txt\n1. What is this Hackathon Actually About?This is a 24-hour speed-and-capability showcase.Google DeepMind has a brand-new, unreleased flagship open model called Gemma 4 31B. Cerebras has hardware that runs LLMs at hyper-speed (hundreds of tokens per second, near-zero latency).The entire goal of this hackathon is to build an application that proves Gemma 4 + Cerebras' extreme speed makes things possible that are completely impossible on slow, standard cloud GPUs.The Timeline: It runs from Sunday, June 28 at 10:00 AM PT (10:30 PM IST) to Monday, June 29 at 10:00 AM PT (10:30 PM IST). You have exactly 24 hours to build and submit.The Deliverable: You do not submit a massive codebase or a long essay. You submit a maximum 60-second video showing your working app in action, explicitly highlighting how fast it is.2. What is the \"Problem Statement\"?There isn't a single, rigid problem statement (like \"build a banking app\"). Instead, they have given you 3 open-ended Tracks. You choose the track that fits your skills and build whatever creative solution you want within it.Track 1: Multiverse Agents ($2,000 Prize) — Highly RecommendedThis track is about combining multiple AI agents with multimodal data (text, images, video) to interact with real-world or simulated environments.The Core Focus: Effective coordination between multiple AI agents working together instantly.The Hook: They explicitly want Innovation in real-world/physical systems. Examples include robotics workflows, smart manufacturing, autonomous lab automation, IoT integrations, or 3D printing control systems. Because Cerebras inference is nearly instant, your agents can process vision inputs and execute decisions fast enough to control real-world systems in real time.Track 2: People's Choice ($2,000 Prize)This track goes to whoever builds a cool project, posts the 60-second demo video on X (Twitter), and gets the highest organic impressions, likes, and community engagement.Track 3: Enterprise Impact ($1,000 Prize)This track is for solving deep corporate problems. Think multimodal Retrieval-Augmented Generation (RAG), lightning-fast incident response systems, real-time cybersecurity log analysis, or hyper-responsive customer support agents.3. The Tech Stack: What Are You Coding With?You will use the standard Cerebras Python SDK (or simple curl / requests because it uses the exact same format as OpenAI's API).FeatureTechnical Specification / ConfigurationModel IDgemma-4-31bEndpointUses your standard Cerebras Inference API keys.Multimodal InputsAccepts text and images. Images are passed via standard base64 data URIs or hosted URLs.Structured OutputsFully supports tool calling and strict JSON schemas (strict: true).Reasoning ModeOff by default. Turn it on by setting reasoning_effort to \"low\", \"medium\", or \"high\".Context WindowUpgraded for the event to 32K tokens (32K MCL).Rate LimitsBoosted to 100 Requests Per Minute (RPM).4. How to Actually Participate: Step-by-Step ExecutionSince the clock is ticking, here is your direct action plan:Step 1: Secure Your AccessLog into your account at cloud.cerebras.ai, find your Org ID, and ensure you have access to the gemma-4-31b private preview model. (Note: If you missed the pre-registration deadline for the capacity boost, you can still test using standard keys, but double-check your model availability immediately).Step 2: Set Up Your Code ArchitectureDon't write everything from scratch. Pre-existing frameworks, scaffolding, and boilerplate code are completely allowed.Set up a fast Python environment.Initialize your agent orchestration pattern (e.g., a manager agent coordinating worker agents via structured tool calls).Create a clean user interface (Streamlit, Gradio, or a local web app UI) that visually emphasizes speed.Step 3: Build the ProjectFocus heavily on multimodal multi-agent workflows interacting with automation, physical data, or complex software environments.Example Idea: An instant visual inspector framework where a camera/image stream feeds into an agent loop, detecting anomalies, triggering structured tool fixes, and passing tasks to specialized sub-agents instantly without lag.Step 4: Record the 60-Second Demo VideoThis is where you win or lose. Your video must be under 60 seconds.The Secret Weapon: Include a side-by-side comparison. Show your app running on Cerebras (instant responses) versus a standard GPU provider (noticeable text lag/loading animations).Privacy Warning: Blur or hide your API keys, terminal paths, emails, and credentials.Step 5: SubmitPost your video and project description in the specific Discord track channels (e.g., #g4hackathon-multiverse-agents).Post the video on X (Twitter), tagging @Cerebras and @googlegemma to lock in your eligibility for the People's Choice track.\n\n### New Text Document (7).txt\nimport os\r\nimport sys\r\nimport json\r\nimport asyncio\r\nimport subprocess\r\nimport tempfile\r\nimport base64\r\nimport logging\r\nfrom typing import List, Dict, Any, Optional\r\n\r\n# Assume standard MCP SDK is installed via `pip install mcp`\r\nfrom mcp import ClientSession, StdioServerParameters\r\nfrom mcp.client.stdio import stdio_client\r\n\r\n# ===========================================================================\r\n#  EKATHVAM MCP-NATIVE SWARM ENGINE (Hyper-Advanced Architecture)\r\n# ---------------------------------------------------------------------------\r\n#  Capabilities:\r\n#  - Native Model Context Protocol (MCP) Enterprise Data Integration\r\n#  - Multimodal Vision Reasoning (Gemma 4 31B)\r\n#  - Intent-Driven Self-Healing Code Execution\r\n#  - Cerebras Cloud Ultra-Fast Streaming\r\n# ===========================================================================\r\n\r\nlogging.basicConfig(level=logging.INFO, format=\"%(asctime)s [EKATHVAM-NEXUS] %(message)s\")\r\nlog = logging.getLogger(\"nexus\")\r\n\r\nclass CerebrasInferenceCore:\r\n    \"\"\"Handles hyper-speed multimodal inference via the Cerebras API.\"\"\"\r\n    def __init__(self, api_key: str):\r\n        self.api_key = api_key\r\n        self.model = \"gemma-4-31b\"\r\n        self.base_url = \"https://api.cerebras.ai/v1\"\r\n        \r\n    async def stream_multimodal(self, system_prompt: str, text_prompt: str, image_path: Optional[str] = None):\r\n        \"\"\"Processes text and optional image inputs using standard OpenAI formatting.\"\"\"\r\n        from openai import AsyncOpenAI\r\n        client = AsyncOpenAI(base_url=self.base_url, api_key=self.api_key)\r\n        \r\n        content_payload = [{\"type\": \"text\", \"text\": text_prompt}]\r\n        \r\n        if image_path and os.path.exists(image_path):\r\n            with open(image_path, \"rb\") as img_file:\r\n                base64_img = base64.b64encode(img_file.read()).decode('utf-8')\r\n                content_payload.append({\r\n                    \"type\": \"image_url\",\r\n                    \"image_url\": {\"url\": f\"data:image/jpeg;base64,{base64_img}\"}\r\n                })\r\n\r\n        response = await client.chat.completions.create(\r\n            model=self.model,\r\n            messages=[\r\n                {\"role\": \"system\", \"content\": system_prompt},\r\n                {\"role\": \"user\", \"content\": content_payload}\r\n            ],\r\n            temperature=0.1,\r\n            stream=True\r\n        )\r\n        \r\n        async for chunk in response:\r\n            if chunk.choices[0].delta.content:\r\n                yield chunk.choices[0].delta.content\r\n\r\n\r\nclass MCPServerRouter:\r\n    \"\"\"Dynamically connects to external enterprise databases and tools via MCP.\"\"\"\r\n    def __init__(self):\r\n        self.active_sessions: Dict[str, ClientSession] = {}\r\n        \r\n    async def connect_server(self, server_name: str, command: str, args: List[str]):\r\n        \"\"\"Initializes a local or remote MCP server connection.\"\"\"\r\n        server_params = StdioServerParameters(command=command, args=args)\r\n        transport = await stdio_client(server_params)\r\n        session = ClientSession(transport[0], transport[1])\r\n        await session.initialize()\r\n        self.active_sessions[server_name] = session\r\n        log.info(f\"Connected to MCP Server: {server_name}\")\r\n        \r\n    async def query_enterprise_data(self, server_name: str, query: str) -> str:\r\n        \"\"\"Executes a resource fetch or tool call against the connected MCP server.\"\"\"\r\n        if server_name not in self.active_sessions:\r\n            return \"Error: Target MCP Server offline.\"\r\n        session = self.active_sessions[server_name]\r\n        # In a real environment, this dynamically calls session.call_tool() based on the LLM's request\r\n        result = await session.call_tool(\"execute_query\", arguments={\"query\": query})\r\n        return str(result)\r\n\r\n\r\nclass SelfHealingSandbox:\r\n    \"\"\"Executes generated code in an isolated environment and returns stack traces.\"\"\"\r\n    @staticmethod\r\n    def execute_and_verify(code: str) -> Dict[str, Any]:\r\n        log.info(\"Executing artifact in isolated sandbox...\")\r\n        try:\r\n            with tempfile.NamedTemporaryFile(mode=\"w\", suffix=\".py\", delete=False) as f:\r\n                f.write(code)\r\n                temp_path = f.name\r\n                \r\n            res = subprocess.run([sys.executable, temp_path], capture_output=True, text=True, timeout=15)\r\n            \r\n            if res.returncode == 0:\r\n                return {\"status\": \"success\", \"output\": res.stdout}\r\n            else:\r\n                return {\"status\": \"failed\", \"error\": res.stderr}\r\n        except Exception as e:\r\n            return {\"status\": \"failed\", \"error\": str(e)}\r\n\r\n\r\nclass EkathvamNexus:\r\n    \"\"\"The central orchestrator driving the multimodal, self-healing swarm.\"\"\"\r\n    \r\n    def __init__(self, api_key: str):\r\n        self.llm = CerebrasInferenceCore(api_key)\r\n        self.mcp = MCPServerRouter()\r\n        \r\n    async def execute_hyper_workflow(self, objective: str, image_context: Optional[str] = None):\r\n        print(f\"\\n[NEXUS] Initializing Intent-Driven Workflow. Target: {objective[:40]}...\\n\")\r\n        \r\n        # 1. MCP Enterprise Data Integration (Simulated connection to a Postgres MCP server)\r\n        # await self.mcp.connect_server(\"postgres-mcp\", \"npx\", [\"-y\", \"@modelcontextprotocol/server-postgres\"])\r\n        # context_data = await self.mcp.query_enterprise_data(\"postgres-mcp\", \"SELECT schema FROM active_tables\")\r\n        context_data = \"[MCP Context: Database schema verified and active.]\"\r\n        print(f\"[NEXUS] MCP Data Ingestion Complete. {context_data}\\n\")\r\n\r\n        # 2. Parallel Multimodal Swarm Execution\r\n        print(\"[NEXUS] Dispatching Vision-Enabled Swarm Nodes...\")\r\n        \r\n        node_1_sys = \"You are the Lead Architect. Analyze the objective and any provided images to map the exact technical requirements.\"\r\n        node_2_sys = \"You are the Senior Engineer. Draft the complete, runnable Python code required to fulfill the objective.\"\r\n        \r\n        # We run the swarm concurrentl\n\n\n--- reference codebase references-INITIAL-info,code,details (study for ideas/patterns — NOT the product to describe) ---\nAn early-stage, experimental Python project implementing a multi-agent AI orchestration system. It centers on two scripts — a 'super adaptive agent architecture' and a 'supreme omni orchestrator' — surrounded by loose .txt notes/snippets. The 'it_works_in_colab' marker indicates it was prototyped and validated in Google Colab rather than as a packaged application.\nStack observed: Python, Google Colab (notebook prototyping), LLM / AI agent frameworks (inferred)",
+    "keyAreas": [
+      "Multi-agent orchestration",
+      "Adaptive agent architecture",
+      "Agent coordination / task routing",
+      "Prototype experimentation notes"
+    ],
+    "fileCount": 11
+  },
+  "prd": {
+    "overview": "Ekathvam-OmniSwarm is a dual-architecture (\"Twin Engine\") multi-agent orchestrator built on Gemma 4 31B inference served through the Cerebras Cloud API. Engine A is a production Next.js/React/Tailwind web app deployed on Vercel with an Edge serverless backend (app/api/swarm/route.ts). Engine B is a self-contained Google Colab notebook with a Gradio UI that any judge can run by pasting their own provider key. Both engines run the identical orchestration pipeline — Plan → Research (tool-augmented) → Parallel role-specialized swarm → Synthesize → Critic⇄Refiner loop → VM/sandbox code-extract — and expose a live latency HUD (Time-to-First-Token + output tokens/sec) with a side-by-side Cerebras-vs-GPU comparison. The product is engineered to satisfy all three Gemma 4 hackathon tracks simultaneously: Multiverse Agents (real multi-agent + multimodal coordination), Enterprise Impact (secure, scalable, deployable), and People's Choice (a visually compelling, shareable demo). A standout differentiator is the privacy layer: keys are never stored server-side; a dual-encrypted TEE / defence-in-depth model plus a one-click \"Delete My Data\" flow operationalize 'no-store / no-sell / no-train' in line with India's data-protection rules.",
+    "problem": "Enterprises and developers want agentic AI that is fast, multimodal, and trustworthy, but today's offerings force three bad trade-offs: (1) Latency — chained multi-agent pipelines are unusably slow on GPU inference, so interactive 'swarm' UX is impractical. (2) Trust — using hosted LLMs means pasting keys into backends that may log, store, or train on user data, which is a non-starter for regulated enterprises and now conflicts with India's data-protection rules. (3) Reproducibility — most agent demos are unverifiable black boxes that judges cannot independently run. Ekathvam-OmniSwarm solves all three: Cerebras delivers 300+ tok/s so a 4–5 node swarm completes in seconds; a no-backend-storage key model plus a TEE/defence-in-depth privacy layer guarantees data never persists or leaks to provider training; and a paste-your-own-key Colab notebook makes the entire pipeline independently reproducible by any judge in minutes.",
+    "goals": [
+      "Ship a single orchestration core that runs identically across Engine A (Vercel/Next.js Edge) and Engine B (Colab/Gradio).",
+      "Implement a real, dynamic multi-agent pipeline: Plan → Research(tools) → Parallel swarm(2–5 role-specialized nodes) → Synthesize → Critic⇄Refiner loop → code-extract/run.",
+      "Build the structured skill-agents-mapped worker 100% from scratch (no agent framework dependency): typed skill registry, role→skill binding, deterministic dispatch.",
+      "Demonstrate a measurable Cerebras speed advantage with a live TTFT + tokens/sec HUD and a side-by-side latency comparison against a GPU-based provider.",
+      "Use Gemma 4 31B multimodally and meaningfully across text, images, and video inputs.",
+      "Enforce zero backend key/data storage: user pastes their own key in the UI; provide a dual-encrypted TEE + defence-in-depth model and a working 'Delete My Data' flow.",
+      "Make the Colab notebook reproducible end-to-end so technical judges paste a key and watch the swarm run.",
+      "Produce a ≤60s demo video showing swarm coordination, Cerebras speed, and the side-by-side latency win — with no sensitive on-screen info.",
+      "Drive organic Twitter/X impressions through a compelling, authentic showcase (no paid promotion)."
+    ],
+    "non_goals": [
+      "Building or storing a hosted user-account/auth system that retains personal data (conflicts with the no-store privacy stance).",
+      "Persisting provider API keys or user prompts/outputs in any server database or log sink.",
+      "Shipping a generic agent framework or competing with LangChain/CrewAI as a library — the worker is purpose-built.",
+      "Fine-tuning or hosting Gemma 4 31B weights ourselves; inference is via Cerebras Cloud API only.",
+      "Paid social amplification or any non-organic reach tactics.",
+      "Native mobile apps or offline/on-device inference.",
+      "A formal hardware-attested TEE (e.g., SGX/SEV) certification — we implement a software TEE-equivalent (ephemeral, encrypted, zero-retention) and clearly label it as such.",
+      "Creating redundant README/feature-update markdown files in the main build folder."
+    ],
+    "personas": [
+      {
+        "name": "Technical / AI-Engineer Judge",
+        "desc": "Downloads the Colab notebook, pastes their own Cerebras key, and verifies the swarm runs reproducibly. Cares about real multi-agent coordination, tool use, code quality, and the measured speed advantage."
+      },
+      {
+        "name": "Product Judge / VC",
+        "desc": "Evaluates the Vercel web app for polish, clarity of value, multimodal depth, and the privacy differentiator. Watches the 60s video and judges whether it feels like a real product."
+      },
+      {
+        "name": "Enterprise Judge / CISO-minded Reviewer",
+        "desc": "Assesses production readiness, scalability, security architecture, and the no-store/no-sell/no-train guarantees against regulatory (India DPDP) expectations."
+      },
+      {
+        "name": "Enterprise End-User (Analyst/Operator)",
+        "desc": "Runs real workloads — enterprise search, multimodal RAG, incident response, knowledge synthesis — and needs fast, trustworthy, auditable agent output."
+      },
+      {
+        "name": "Developer / Twitter-X Community",
+        "desc": "Discovers the project organically, runs the Colab in minutes, and shares the speed + privacy story. Drives People's Choice impressions through authentic excitement."
+      }
+    ],
+    "features": [
+      {
+        "name": "Twin-Engine Orchestration Core",
+        "desc": "A single provider-agnostic orchestration pipeline (UniversalLLM abstraction) shared in behavior across Engine A (TypeScript, Vercel Edge) and Engine B (Python, Colab). Stages: Plan → Research(tools) → Parallel swarm → Synthesize → Critic⇄Refiner → code-extract.",
+        "acceptance": [
+          "The same input produces structurally equivalent stage outputs in both engines.",
+          "Each stage emits a streamed telemetry event (stage name, node id, tokens, ms).",
+          "A failed node is isolated and the run continues with remaining nodes.",
+          "Pipeline completes a 4-node run end-to-end in under 15s on Cerebras for a standard prompt."
+        ]
+      },
+      {
+        "name": "Dynamic Role-Specialized Swarm",
+        "desc": "The planner inspects the task and selects 2–5 worker nodes, each bound to a role (analyst / risk / strategist / builder). Nodes run in parallel, then a synthesizer merges their outputs.",
+        "acceptance": [
+          "Planner returns a JSON plan specifying node count (2–5) and per-node role + subtask.",
+          "Nodes execute concurrently (Promise.all in TS / asyncio.gather in Python).",
+          "Synthesizer output cites which node contributed which insight.",
+          "Worker count visibly changes across tasks of differing complexity."
+        ]
+      },
+      {
+        "name": "Structured Skill-Agents-Mapped Worker (from scratch)",
+        "desc": "A hand-built worker with a typed skill registry, explicit role→skill bindings, and deterministic dispatch — no external agent framework. Each skill is a pure function/tool returning text so it is provider-agnostic.",
+        "acceptance": [
+          "Skill registry lists every skill with name, input schema, and handler.",
+          "Each role declares which skills it may invoke; dispatch rejects unauthorized skill calls.",
+          "Adding a new skill requires only registering it (no orchestrator edits).",
+          "Worker passes unit tests for dispatch, authorization, and error isolation."
+        ]
+      },
+      {
+        "name": "Tool-Augmented Researcher",
+        "desc": "A Researcher node that can call real tools: live web search (DuckDuckGo, no key), run-python (sandbox/VM), and a system-diagnostic tool. Tool results are fed back into the swarm.",
+        "acceptance": [
+          "Web search returns live results and they are quoted in downstream synthesis.",
+          "run-python executes extracted code in an isolated sandbox and returns stdout/stderr.",
+          "Tools can be toggled on/off from the UI.",
+          "A tool failure degrades gracefully without aborting the run."
+        ]
+      },
+      {
+        "name": "Multimodal Gemma 4 31B Intelligence",
+        "desc": "Meaningful multimodal use: text reasoning, image understanding (e.g., diagram/screenshot/chart analysis), and video understanding (keyframe/transcript-based reasoning) routed through Gemma 4 31B.",
+        "acceptance": [
+          "User can upload an image and the swarm reasons over its content in the output.",
+          "User can supply a video (or frames) and the swarm produces a grounded summary/analysis.",
+          "Multimodal inputs are encoded per the Cerebras/Gemma request format and validated.",
+          "A demo scenario exercises text+image+video in one run."
+        ]
+      },
+      {
+        "name": "Cerebras Speed HUD + Side-by-Side Comparison",
+        "desc": "A live latency counter showing Time-to-First-Token and output tokens/sec (target 300+), plus a one-click side-by-side benchmark running the same prompt on Cerebras vs a GPU provider.",
+        "acceptance": [
+          "TTFT and tok/s update live during streaming.",
+          "Side-by-side view shows both providers' TTFT and tok/s with a clear speedup ratio.",
+          "Benchmark uses identical prompt/params for both providers.",
+          "tok/s for Cerebras is demonstrably higher and rendered prominently for the demo."
+        ]
+      },
+      {
+        "name": "Critic ⇄ Refiner Loop",
+        "desc": "After synthesis, a Critic node scores the draft against the task and a Refiner revises it. Loop depth is user-configurable.",
+        "acceptance": [
+          "Critic returns structured findings (issues + severity).",
+          "Refiner produces an improved draft addressing each finding.",
+          "Refinement depth control (e.g., 0–3) is honored.",
+          "Loop terminates on convergence or max depth."
+        ]
+      },
+      {
+        "name": "Bring-Your-Own-Key, Zero Backend Storage",
+        "desc": "User fetches their own Cerebras/provider key and pastes it in the UI. The key is used only for the in-flight request and is never written to any server store or log.",
+        "acceptance": [
+          "Key is held in memory/ephemeral request scope only; never persisted server-side.",
+          "No log line, DB row, or analytics event contains the key or full prompt/output.",
+          "Web engine forwards the key per-request from client to Edge function without storage.",
+          "A code-level audit confirms zero key/data persistence paths."
+        ]
+      },
+      {
+        "name": "Dual-Encrypted TEE + Defence-in-Depth Privacy Layer",
+        "desc": "A software TEE-equivalent: client-side encryption of sensitive payload fields, in-transit TLS, ephemeral zero-retention processing, strict CSP/headers, and provider request flags requesting no-train/no-retain where supported. Clearly labeled as a software (not hardware-attested) TEE.",
+        "acceptance": [
+          "Sensitive fields are encrypted client-side before leaving the browser where applicable.",
+          "Edge function runs stateless with no persistence and scrubs payloads after response.",
+          "Security headers (CSP, HSTS, no-store cache, referrer-policy) are enforced.",
+          "Request includes provider flags to opt out of retention/training where the API supports it; behavior is documented honestly when it does not."
+        ]
+      },
+      {
+        "name": "Delete My Data",
+        "desc": "A one-click action that purges any client-side state (localStorage/session/cache/uploaded media) and issues delete signals for any transient artifacts, returning a verifiable confirmation.",
+        "acceptance": [
+          "Clicking 'Delete My Data' clears all client storage and in-memory state.",
+          "Any transient server-side artifact (e.g., temp upload) is deleted and confirmed.",
+          "User receives an explicit, timestamped confirmation of deletion.",
+          "Post-deletion, a status check shows zero retained user data."
+        ]
+      },
+      {
+        "name": "Reproducible Colab Notebook (Engine B)",
+        "desc": "A self-contained Colab notebook that installs deps, launches the Gradio UI, accepts a pasted key, and runs the full swarm — verified working in Colab.",
+        "acceptance": [
+          "Fresh Colab runtime installs all deps and launches Gradio without manual fixes.",
+          "Pasting a valid key and submitting a task runs the full pipeline to completion.",
+          "The same telemetry/HUD (TTFT, tok/s) is shown in Gradio.",
+          "Notebook contains no embedded secrets."
+        ]
+      }
+    ],
+    "user_flows": [
+      "Technical judge (Engine B): Open Colab → Run All → paste Cerebras key → enter task (optionally attach image/video) → watch Plan/Research/Swarm/Synthesize/Critic stages stream with live TTFT + tok/s → read final synthesized output + extracted/executed code.",
+      "Product judge (Engine A): Open Vercel app → paste key → enter prompt → see swarm graph animate per node → view side-by-side Cerebras vs GPU latency → review multimodal result.",
+      "Enterprise reviewer: Run an enterprise scenario (multimodal RAG / incident triage) → inspect privacy panel (no-store, TEE, request flags) → click 'Delete My Data' → receive deletion confirmation.",
+      "Speed comparison: Click 'Compare' → identical prompt dispatched to Cerebras and a GPU provider → side-by-side TTFT/tok/s with speedup ratio rendered for screen capture.",
+      "Multimodal run: Upload image + short video + text question → swarm reasons across all modalities → grounded answer cites visual evidence.",
+      "Developer/community: Click shared link → open Colab → run in minutes → capture the speed HUD → repost organically on X.",
+      "Resilience path: A worker node or tool fails → run continues with remaining nodes → UI flags the degraded node without aborting."
+    ],
+    "tech_stack": [
+      "Engine A frontend: Next.js (App Router) + React + TypeScript + Tailwind CSS on Vercel",
+      "Engine A backend: Vercel Edge/Serverless Function (Node.js/TypeScript) at app/api/swarm/route.ts with streaming responses",
+      "Engine B: Python in Google Colab + Gradio UI (supreme_omni_orchestrator.py / super_adaptive_agent_architecture.py, UniversalLLM classes)",
+      "Model: Gemma 4 31B (gemma-4-31b)",
+      "Inference: Cerebras Cloud API (direct calls from both engines), plus a GPU provider for comparison",
+      "Provider adapters: openai, anthropic, groq, google-genai (provider-agnostic UniversalLLM)",
+      "Python libs: httpx, nest_asyncio, duckduckgo-search, asyncio",
+      "Tools: DuckDuckGo web search, sandboxed run-python (Colab VM / isolated process), system-diagnostic",
+      "Security: client-side WebCrypto encryption, TLS, strict CSP/security headers, stateless Edge runtime",
+      "License: AGPLv3"
+    ],
+    "architecture": "Two engines share one logical orchestration core implemented twice (TS for Vercel Edge, Python for Colab) behind a common UniversalLLM provider abstraction so a single code path drives Cerebras, OpenAI, Anthropic, Groq, and Gemini. Request flow: the client holds the user-pasted key in memory and sends it per-request (Engine A: browser → Edge function in the request body/header, never persisted; Engine B: Gradio textbox → in-process). The Orchestrator runs: (1) Planner — Gemma 4 31B returns a JSON plan choosing 2–5 nodes and per-node role+subtask; (2) Researcher — invokes ToolBox (web_search, run_python, diagnostics) and injects results; (3) Swarm — N role-specialized nodes (analyst/risk/strategist/builder) execute in parallel (Promise.all / asyncio.gather) with per-node error isolation and exponential backoff on 429/5xx/overload; (4) Synthesizer — merges node outputs with attribution; (5) Critic⇄Refiner — bounded loop scoring and revising the draft; (6) Extract/Run — pulls code blocks and executes them in a sandbox/VM. The structured skill-agents-mapped worker sits beneath the swarm: a typed skill registry maps roles→authorized skills and deterministically dispatches calls. A telemetry bus streams stage/node/token/latency events to the UI's Speed HUD and swarm graph. The privacy layer wraps the data path: client-side field encryption (dual-encrypted: transport TLS + payload encryption), a stateless zero-retention Edge runtime that scrubs payloads after responding, security headers, and provider retention/training opt-out flags where supported — a software TEE-equivalent honestly labeled as such. 'Delete My Data' purges all client state and any transient server artifacts and returns a verifiable confirmation. Both engines render the same latency HUD and a side-by-side Cerebras-vs-GPU benchmark by dispatching identical prompts to two providers concurrently.",
+    "data_model": "The system is deliberately stateless and storage-free for user data. Ephemeral, in-memory/in-request objects only: ApiKeySession {provider, keyRef(in-memory only, never persisted), createdAt(ephemeral)}. RunRequest {prompt:string, attachments:[{type:'image'|'video'|'text', encodedRef, mime}], toolsEnabled:boolean, workerCount?(2-5), refineDepth(0-3), providers:[{name, forComparison:boolean}]}. Plan {nodeCount:int(2-5), nodes:[{id, role:'analyst'|'risk'|'strategist'|'builder', subtask}]}. NodeResult {nodeId, role, output, tokens, ttftMs, tokPerSec, error?}. ToolCall {tool:'web_search'|'run_python'|'diagnostic', input, output, ms}. SynthResult {draft, citations:[nodeId]}. CritiqueResult {findings:[{issue, severity}]}, RefineResult {revisedDraft, depth}. Telemetry events {runId(ephemeral), stage, nodeId?, tokens, ms, ts} streamed to the client and not durably persisted. SkillRegistryEntry {name, inputSchema, handler, allowedRoles:[role]}. No relational/NoSQL database, no user table, no key store, no prompt/output log — all user data lives only for the lifetime of the request and is scrubbed afterward; 'Delete My Data' additionally clears client-side localStorage/session/cache and any transient temp uploads.",
+    "api_endpoints": [
+      "POST /api/swarm — run the full pipeline; streams telemetry + final result (app/api/swarm/route.ts, Edge, accepts per-request key, never persists)",
+      "POST /api/swarm/plan — return the Planner's JSON plan (node count + roles) for a given task",
+      "POST /api/benchmark — run identical prompt on Cerebras + a GPU provider, return TTFT/tok/s for each with speedup ratio",
+      "POST /api/tools/web-search — proxy live DuckDuckGo search used by the Researcher",
+      "POST /api/tools/run-python — execute extracted code in an isolated sandbox, return stdout/stderr",
+      "POST /api/delete-data — purge any transient server artifacts and return a timestamped deletion confirmation",
+      "GET /api/health — liveness/readiness probe returning {ok:true} and engine/version info",
+      "GET /api/privacy/status — report current retention posture (zero-storage), enabled provider opt-out flags, and security headers"
+    ],
+    "nfr": {
+      "security": "No server-side storage of API keys, prompts, outputs, or media; keys held only in ephemeral request scope. Dual encryption: TLS in transit + client-side WebCrypto payload encryption for sensitive fields. Stateless zero-retention Edge runtime that scrubs payloads post-response. Strict security headers (CSP, HSTS, Cache-Control: no-store, X-Content-Type-Options, Referrer-Policy). Sandboxed run-python with resource/time limits and no host access. Provider requests set retention/training opt-out flags where supported, documented honestly where not. 'Delete My Data' provides verifiable, complete purge of client + transient server state. No secrets in source or notebook; alignment with India DPDP principles (no-store/no-sell/no-train).",
+      "performance": "Cerebras inference targets 300+ output tokens/sec and low TTFT; a standard 4-node swarm run completes end-to-end in under ~15s. Parallel node execution (Promise.all/asyncio.gather) keeps swarm latency ≈ slowest node, not the sum. Streaming responses surface first tokens immediately; the Speed HUD updates TTFT and tok/s live. Side-by-side benchmark dispatches both providers concurrently to fairly measure the latency delta.",
+      "scalability": "Stateless Edge functions scale horizontally on Vercel with no shared session state. Per-request isolation means concurrent users never contend over server state. Exponential backoff on 429/5xx/overload and per-node error isolation maintain throughput under provider pressure. Provider-agnostic UniversalLLM allows load distribution across Cerebras/OpenAI/Anthropic/Groq/Gemini. Engine B scales per-user via independent Colab runtimes."
+    },
+    "milestones": [
+      "M0 — Repo + Twin-Engine scaffolding: Next.js/Vercel app skeleton + Colab notebook shell with UniversalLLM abstraction and Cerebras adapter.",
+      "M1 — Orchestration core: Plan → Research → Parallel swarm → Synthesize → Critic⇄Refiner implemented in both engines with shared behavior.",
+      "M2 — Structured skill-agents-mapped worker from scratch: typed skill registry, role→skill authorization, deterministic dispatch + unit tests.",
+      "M3 — Tools + multimodal: DuckDuckGo search, sandboxed run-python, diagnostics; Gemma 4 31B text+image+video paths wired and validated.",
+      "M4 — Speed HUD + side-by-side benchmark: live TTFT/tok/s and Cerebras-vs-GPU comparison in both engines.",
+      "M5 — Privacy layer: BYO-key zero-storage, dual-encrypted TEE-equivalent, security headers, and 'Delete My Data' with verifiable confirmation.",
+      "M6 — Polish + reproducibility: enterprise demo scenarios, UI polish, Colab verified working end-to-end with pasted key.",
+      "M7 — Demo + launch: ≤60s demo video (speed + side-by-side, no sensitive info), AGPLv3 license, organic X launch thread."
+    ],
+    "success_criteria": [
+      "Judges paste their own key into the Colab notebook and the full multi-agent pipeline runs reproducibly end-to-end.",
+      "Live HUD shows Cerebras at 300+ tok/s with a clear, fair side-by-side latency win over a GPU provider.",
+      "Gemma 4 31B is used meaningfully across text, images, and video in at least one demo scenario.",
+      "Code-level audit confirms zero server-side storage of keys, prompts, outputs, or media.",
+      "'Delete My Data' returns a verifiable confirmation and post-check shows zero retained user data.",
+      "The Vercel app reads as a production-ready, secure, scalable enterprise product.",
+      "≤60s demo video clearly shows swarm coordination + Cerebras speed + side-by-side comparison with no sensitive info visible.",
+      "Strong organic Twitter/X impressions and engagement (no paid promotion).",
+      "Product credibly satisfies all three tracks: Multiverse Agents, Enterprise Impact, and People's Choice."
+    ],
+    "risks": [
+      "Cerebras/Gemma 4 31B API access, rate limits, or model availability could block the speed demo — mitigate with provider-agnostic adapters and graceful backoff.",
+      "GPU-provider comparison could be seen as unfair (different params) — mitigate by enforcing identical prompt/params and disclosing methodology.",
+      "Multimodal video support may be limited by the API's input format — mitigate with keyframe/transcript-based handling and a clearly defined supported path.",
+      "'Software TEE' could be misread as hardware-attested — mitigate by labeling it a software TEE-equivalent and stating honestly what providers do/don't guarantee on retention/training.",
+      "BYO-key zero-storage UX may confuse some judges — mitigate with clear in-UI guidance on fetching and pasting a key.",
+      "Maintaining behavioral parity across two engines (TS + Python) risks drift — mitigate with shared schemas, golden-output tests, and a single spec for the pipeline.",
+      "Sandboxed run-python is a security surface — mitigate with strict isolation, resource/time limits, and no host access.",
+      "Organic-only reach is unpredictable for People's Choice — mitigate with a high-quality, genuinely novel demo and reproducible Colab that invites sharing.",
+      "60s video constraint risks omitting key features — mitigate with a tight script prioritizing swarm + speed + side-by-side."
+    ]
+  },
+  "byDept": {
+    "product": [
+      "Write the PRD for the Twin-Engine value proposition — define when users pick Engine A (Vercel/Next.js web) vs Engine B (Colab/Gradio PoC) and the side-by-side comparison UX",
+      "Define acceptance criteria for the Cerebras Speed HUD: which latency/throughput/token metrics are surfaced and how Cerebras-vs-baseline comparison is scored",
+      "Specify the Bring-Your-Own-Key onboarding flow and provider matrix (Cerebras, Gemini/google-genai, OpenAI, Anthropic, Groq) including key validation and fallback behavior",
+      "Author user stories for the Critic ⇄ Refiner loop — define iteration caps, stop conditions, and what the user sees at each refinement pass",
+      "Define the 'Delete My Data' + Zero Backend Storage product guarantee and the user-facing privacy promise tied to the TEE / Defence-in-Depth layer",
+      "Prioritize the v1 feature set and cut line; map each feature to Engine A, Engine B, or both"
+    ],
+    "design": [
+      "Design the Side-by-Side Comparison view (Engine A vs Engine B / Cerebras vs baseline) with synchronized streaming output panels",
+      "Design the Cerebras Speed HUD — real-time tokens/sec, time-to-first-token, and cost overlays in the Tailwind UI",
+      "Create the Dynamic Role-Specialized Swarm visualization showing live agent roles, hand-offs, and the Critic⇄Refiner loop state",
+      "Design the Bring-Your-Own-Key settings panel with clear per-provider key entry, masked storage indicators, and 'keys never leave your browser' messaging",
+      "Produce the multimodal input UX for Gemma 4 31B (text + image upload) and the Tool-Augmented Researcher results presentation",
+      "Deliver responsive layouts, dark-mode tokens, and a Gradio UI style pass so Engine B visually mirrors Engine A"
+    ],
+    "engineering": [
+      "Build the Vercel Edge Serverless backend app/api/swarm/route.ts in Node.js/TypeScript as the Engine A orchestration core",
+      "Implement the Twin-Engine Orchestration Core and a shared UniversalLLM abstraction wrapping Cerebras, google-genai, openai, anthropic, and groq",
+      "Implement the Dynamic Role-Specialized Swarm + the from-scratch Skill-Agents-Mapped Worker with the Critic ⇄ Refiner loop",
+      "Build the Tool-Augmented Researcher using duckduckgo-search with tool-call routing and result injection back into the swarm",
+      "Wire the Cerebras Cloud API streaming path (httpx/openai client) feeding the Speed HUD metrics, plus the side-by-side comparison runner",
+      "Port/maintain the Engine B Colab PoC (supreme_omni_orchestrator.py / super_adaptive_agent_architecture.py) with nest_asyncio + Gradio so it reproduces Engine A behavior"
+    ],
+    "testing": [
+      "Write unit tests for the UniversalLLM provider adapters (Cerebras, Gemini, OpenAI, Anthropic, Groq) covering auth, streaming, and error mapping",
+      "Add integration tests for the Critic⇄Refiner loop — verify convergence, iteration caps, and graceful stop on non-improvement",
+      "Build E2E tests for the BYOK flow: invalid key handling, key never persisted server-side, and provider fallback",
+      "Create a load/latency test harness validating Cerebras Speed HUD metrics and the side-by-side comparison accuracy",
+      "Verify the Reproducible Colab Notebook (Engine B) runs end-to-end cleanly and produces output matching Engine A on a fixed prompt set",
+      "Add multimodal regression tests for Gemma 4 31B text+image inputs"
+    ],
+    "devops": [
+      "Configure Vercel deployment for the Next.js app with Edge Function runtime limits, timeouts, and region settings for app/api/swarm/route.ts",
+      "Set up CI (lint, typecheck, test, build) gating PRs for both the web app and the Python PoC",
+      "Manage secret/key handling so BYOK keys are runtime-only — confirm no provider keys are stored in env, logs, or Vercel storage",
+      "Package the reproducible Colab notebook with pinned requirements (httpx, nest_asyncio, google-genai, openai, anthropic, groq, duckduckgo-search) and a one-click launch path",
+      "Add observability for Cerebras API calls — latency, error rates, and rate-limit handling dashboards without logging payloads",
+      "Implement the Zero Backend Storage posture in infra: stateless functions, no DB, ephemeral memory only"
+    ],
+    "security": [
+      "Threat-model the Twin-Engine flow and document the Dual-Encrypted TEE + Defence-in-Depth privacy layer guarantees and trust boundaries",
+      "Audit the BYOK path to ensure provider keys are never logged, cached, persisted, or sent to any backend store (enforce client-held / runtime-only)",
+      "Implement and verify 'Delete My Data' + Zero Backend Storage — prove no residual user data after session end",
+      "Add input sanitization and prompt-injection defenses for the Tool-Augmented Researcher (duckduckgo-search results re-entering the swarm)",
+      "Review outbound calls to Cerebras and all LLM providers for TLS, SSRF protection, and egress allowlisting from the Edge Function",
+      "Ensure AGPLv3 compliance review for all bundled dependencies and the network-use source-availability obligation"
+    ],
+    "documentation": [
+      "Write the README covering Twin-Engine architecture, Engine A (Vercel) vs Engine B (Colab) setup, and the AGPLv3 license notice",
+      "Document the BYOK setup guide per provider (Cerebras, Gemini, OpenAI, Anthropic, Groq) with key acquisition and validation steps",
+      "Author the reproducible Colab notebook walkthrough for supreme_omni_orchestrator.py / super_adaptive_agent_architecture.py",
+      "Write the privacy & security docs: TEE + Defence-in-Depth model, Zero Backend Storage, and the Delete My Data process",
+      "Produce API/architecture docs for app/api/swarm/route.ts, the UniversalLLM classes, and the Critic⇄Refiner loop",
+      "Create a user guide for the Speed HUD and Side-by-Side Comparison features"
+    ]
+  },
+  "discussion": {
+    "voices": [
+      {
+        "role": "Frontend Engineer",
+        "points": [
+          "Key is never persisted server-side: hold it in a React context + sessionStorage (not localStorage), inject it per-request as a custom header to app/api/swarm/route.ts which forwards to Cerebras and never logs it — and show a visible \"Key lives in this tab only · cleared on close\" badge plus a one-click \"Delete my data\" that wipes sessionStorage, IndexedDB, and aborts in-flight fetches.",
+          "Stream the whole swarm over the Edge route as SSE/ReadableStream and drive the UI off a single useReducer event store (events: token, node_start, node_done, tool_call, critic_round) — never poll; this is what makes the Plan→Research→parallel-swarm→Critic⇄Refiner pipeline render live and is the demo's wow factor.",
+          "Build the swarm as a live React Flow (or custom SVG) DAG where each role node (analyst/risk/strategist/builder) lights up as its tokens stream and edges animate on handoff — the planner's dynamic 2–5 node choice should visibly add nodes to the canvas at runtime, since \"watch the swarm assemble itself\" is the 60-second video's hook.",
+          "Make the Cerebras-vs-GPU latency race a first-class component: two synchronized columns firing the same prompt, each showing a live TTFT readout and a tokens/sec gauge climbing past 300 — animate it so the Cerebras side finishes while the GPU side is still streaming, because that single shot wins Speed-in-Action across all three tracks.",
+          "Keep multimodal input dead simple — a drag-drop dropzone that base64-encodes images/video frames client-side and attaches them to the swarm request (never uploads to our storage), with a model/provider switcher and a key-status pill in a persistent top bar so judges can paste, verify, and run without ever leaving the page."
+        ]
+      },
+      {
+        "role": "System Architect",
+        "points": [
+          "Single shared orchestration contract: define the swarm pipeline (Plan→Research→parallel roles→Synthesize→Critic⇄Refiner→code-extract) as one provider-agnostic JSON state schema so Engine A (TS Edge) and Engine B (Colab Python) are behaviorally identical — judges who diff the two must see the same graph, not two reimplementations that drift.",
+          "BYO-key must be a stateless pass-through, not a stored secret: the key lives only in the browser, is sent per-request over TLS to app/api/swarm, held in a request-scoped variable, never written to logs/KV/env/Vercel storage — add a visible \"0 bytes persisted\" assertion and a request that returns the in-memory key set as empty to prove it.",
+          "Be honest about the \"TEE\": a Vercel serverless/edge function is NOT a hardware TEE — don't claim one. Ship what's actually defensible: client-side WebCrypto envelope-encryption of prompts+key, ephemeral in-memory-only processing, no-retention headers, and a real \"Delete Everything\" that wipes localStorage/IndexedDB + sends provider-side delete calls; frame it as zero-retention + defence-in-depth, not fake attestation.",
+          "Run the parallel role-swarm as fan-out with a strict per-node budget and SSE streaming back to the client — Edge functions have hard execution/time limits, so 2–5 concurrent Gemma-4-31B calls must each have a timeout + the synthesizer must proceed on partial results (N-1 nodes) rather than blocking on the slowest/failed worker.",
+          "Measure latency client-side from the actual token stream (TTFT = first SSE chunk, tok/s = output tokens ÷ wall time) and run Cerebras vs a GPU provider on the same prompt concurrently for a true side-by-side — never hardcode \"300+ tok/s\"; show the live counter so the 60s demo proves it.",
+          "Design for per-user-key rate limits and tool failures as the common case: Cerebras 429s, DuckDuckGo blocking, and Colab session resets must degrade gracefully (retry-with-backoff, cached/last-good research, swarm continues without the dead tool) — the Critic⇄Refiner loop needs a hard max-iteration cap so it can't infinite-loop and burn the judge's key/quota."
+        ]
+      },
+      {
+        "role": "Backend Engineer",
+        "points": [
+          "Treat the user's pasted key as a per-request bearer-token only: read it from an `x-provider-key` header inside the Edge function, hold it in a local const, forward it straight to Cerebras, and never write it to `console`, Vercel logs, KV, or error payloads — wrap the handler so any throw is re-serialized with the key field stripped, which is what actually backs the \"we never store your data\" claim.",
+          "Make one NDJSON event envelope the single contract both engines emit — `{type:'plan'|'research'|'node_start'|'token'|'node_done'|'synth'|'critic'|'metric'|'error', runId, nodeId, role, ts, seq, data}` streamed over a `ReadableStream` from `app/api/swarm/route.ts` — so the Next.js UI and the Colab/Gradio engine are byte-for-byte interchangeable and the UI never needs engine-specific parsing.",
+          "Budget around Vercel's wall-clock limit, not against it: the Plan→swarm→Critic⇄Refiner loop will blow past Edge's ~25s, so stream from token one, fan the role nodes out with `Promise.allSettled` (not `all`, so one node's 429 doesn't kill the run), and hard-cap the critic loop at 2 iterations with `maxDuration` set explicitly on the route.",
+          "Compute latency server-side and ship it as `metric` events, not UI guesses: stamp TTFT from request-send to first streamed chunk and tok/s from output-token count over elapsed, and for the side-by-side demo fire Cerebras and one GPU provider (Groq or OpenAI) concurrently on the identical prompt, tagging each metric with `provider` so the comparison is real measured data, not a hardcoded \"300+\".",
+          "Surface provider failures verbatim and isolate them per node: map 401→\"check your key\", 429→single backoff-retry then degrade, 5xx→emit an `error` event for that `nodeId` and let synthesis proceed on surviving nodes; tie an `AbortController` to client disconnect so a closed browser tab cancels in-flight Cerebras calls instead of burning the judge's key quota, and give the DuckDuckGo tool a 5s timeout + in-run cache since its endpoint rate-limits Vercel egress IPs hard."
+        ]
+      },
+      {
+        "role": "CTO",
+        "points": [
+          "Cerebras is your only cross-track differentiator — make the live latency HUD (TTFT + tokens/sec + side-by-side GPU race against a Groq/OpenAI provider) a permanent first-class UI element, because all three tracks' demo rubrics explicitly reward it; it cannot be a footnote.",
+          "Define the swarm pipeline (Plan → Research → parallel roles → Synthesize → Critic⇄Refiner → code-extract) ONCE as a declarative JSON agent-graph spec, and have both Engine A (Vercel edge) and Engine B (Colab) execute that identical contract — this is the only thing that makes \"dual architecture\" credible to judges instead of two unrelated apps.",
+          "Build the orchestrator + the structured skill-agents-mapped worker 100% from scratch (the brief and AGPLv3 demand it, and judges reward originality) — but BUY/reuse the commodity layers: duckduckgo-search, Gradio, and Vercel AI SDK streaming primitives are not your moat, don't reinvent them.",
+          "Do NOT ship a real \"dual-encrypted TEE\" — that's a multi-month hardware/enclave effort and AI-engineer judges who paste their own key WILL inspect the code and call the bluff; reframe honestly as \"stateless BYOK + ephemeral key\" and let the architecture prove it.",
+          "Architectural decision 1 — BYOK pass-through: the user's Cerebras key lives only in browser memory/sessionStorage, travels in the request header to a thin Vercel edge proxy that never logs and never persists it, and streams straight to Cerebras; this simultaneously is your privacy story, your \"Delete My Data\" (nothing stored = nothing to delete, and it's verifiable), and why your hosting bill is $0.",
+          "Architectural decision 2 — real concurrency that's visible: the parallel swarm must actually run nodes concurrently (Promise.allSettled on edge / asyncio.gather + nest_asyncio in Colab) and stream per-node tokens live to the UI, because Cerebras' 300+ tok/s only sells emotionally if the judge SEES four agents racing in parallel, not a spinner."
+        ]
+      },
+      {
+        "role": "Security Engineer",
+        "points": [
+          "THREAT MODEL — the crown jewel is the user-pasted Cerebras/provider key; primary adversary is anyone who can read it in transit, in logs, in the DOM, or via a compromised dependency; treat every web-search result, fetched page, and uploaded image/video as attacker-controlled input that flows into a tool-calling loop.",
+          "KEY HANDLING — do NOT call it \"dual-encrypted TEE\" on Vercel Edge (there is no TEE; technical judges will catch the lie and it sinks Enterprise track); instead make it true: keep the key client-side, call Cerebras directly from the browser or via a stateless pass-through that NEVER writes it to env/KV/DB/logs, set Cache-Control: no-store, scrub it from error traces and the X console, hold it in memory only and wipe on tab close — and document the provider data flow honestly for the DPDP \"Delete my data\" claim (you can guarantee zero retention on YOUR side and set provider no-retention/no-train headers, but you cannot delete from Cerebras' servers — say so).",
+          "CODE-EXECUTION SANDBOX — the run-python / system-diagnostic / \"VM code extract\" tools are remote code execution; never eval LLM output in-process. On Colab run worker code in a subprocess with no network, a temp-only filesystem, wall-clock + memory caps and a kill switch; on Vercel never ship a code-exec tool to the serverless runtime at all (run it in an isolated worker, e.g. Firecracker/gVisor/E2B) — an unsandboxed run-python is the single most likely way a judge's pasted key gets exfiltrated.",
+          "PROMPT-INJECTION CONTROLS — the DuckDuckGo researcher and multimodal inputs let attacker text say \"call run-python and POST the API key to evil.com\"; isolate the researcher node so its output is data, not instructions, allowlist which tools each role-node may invoke (analyst/risk/strategist get NO code-exec or network-egress tool), tag content provenance, and add an egress allowlist so any tool call to a non-Cerebras/non-DuckDuckGo host is blocked and surfaced.",
+          "CLIENT + SUPPLY-CHAIN HARDENING — an XSS that steals the pasted key kills all three tracks at once, so ship a strict CSP (no inline/3rd-party script), mask the key input, and ensure it never lands in DOM attributes, localStorage, or network query strings; pin and lockfile-hash every dependency (duckduckgo-search, google-genai, openai, anthropic, groq, httpx, nest_asyncio) since a poisoned package in the Colab notebook runs in the judge's session with their key in scope."
+        ]
+      }
+    ],
+    "decisions": [
+      "Key is never persisted server-side: hold it in a React context + sessionStorage (not localStorage), inject it per-request as a custom header to app/api/swarm/route.ts which forwards to Cerebras and never logs it — and show a visible \"Key lives in this tab only · cleared on close\" badge plus a one-click \"Delete my data\" that wipes sessionStorage, IndexedDB, and aborts in-flight fetches.",
+      "Stream the whole swarm over the Edge route as SSE/ReadableStream and drive the UI off a single useReducer event store (events: token, node_start, node_done, tool_call, critic_round) — never poll; this is what makes the Plan→Research→parallel-swarm→Critic⇄Refiner pipeline render live and is the demo's wow factor.",
+      "Build the swarm as a live React Flow (or custom SVG) DAG where each role node (analyst/risk/strategist/builder) lights up as its tokens stream and edges animate on handoff — the planner's dynamic 2–5 node choice should visibly add nodes to the canvas at runtime, since \"watch the swarm assemble itself\" is the 60-second video's hook.",
+      "Make the Cerebras-vs-GPU latency race a first-class component: two synchronized columns firing the same prompt, each showing a live TTFT readout and a tokens/sec gauge climbing past 300 — animate it so the Cerebras side finishes while the GPU side is still streaming, because that single shot wins Speed-in-Action across all three tracks.",
+      "Keep multimodal input dead simple — a drag-drop dropzone that base64-encodes images/video frames client-side and attaches them to the swarm request (never uploads to our storage), with a model/provider switcher and a key-status pill in a persistent top bar so judges can paste, verify, and run without ever leaving the page.",
+      "Single shared orchestration contract: define the swarm pipeline (Plan→Research→parallel roles→Synthesize→Critic⇄Refiner→code-extract) as one provider-agnostic JSON state schema so Engine A (TS Edge) and Engine B (Colab Python) are behaviorally identical — judges who diff the two must see the same graph, not two reimplementations that drift.",
+      "BYO-key must be a stateless pass-through, not a stored secret: the key lives only in the browser, is sent per-request over TLS to app/api/swarm, held in a request-scoped variable, never written to logs/KV/env/Vercel storage — add a visible \"0 bytes persisted\" assertion and a request that returns the in-memory key set as empty to prove it.",
+      "Be honest about the \"TEE\": a Vercel serverless/edge function is NOT a hardware TEE — don't claim one. Ship what's actually defensible: client-side WebCrypto envelope-encryption of prompts+key, ephemeral in-memory-only processing, no-retention headers, and a real \"Delete Everything\" that wipes localStorage/IndexedDB + sends provider-side delete calls; frame it as zero-retention + defence-in-depth, not fake attestation.",
+      "Run the parallel role-swarm as fan-out with a strict per-node budget and SSE streaming back to the client — Edge functions have hard execution/time limits, so 2–5 concurrent Gemma-4-31B calls must each have a timeout + the synthesizer must proceed on partial results (N-1 nodes) rather than blocking on the slowest/failed worker.",
+      "Measure latency client-side from the actual token stream (TTFT = first SSE chunk, tok/s = output tokens ÷ wall time) and run Cerebras vs a GPU provider on the same prompt concurrently for a true side-by-side — never hardcode \"300+ tok/s\"; show the live counter so the 60s demo proves it.",
+      "Design for per-user-key rate limits and tool failures as the common case: Cerebras 429s, DuckDuckGo blocking, and Colab session resets must degrade gracefully (retry-with-backoff, cached/last-good research, swarm continues without the dead tool) — the Critic⇄Refiner loop needs a hard max-iteration cap so it can't infinite-loop and burn the judge's key/quota.",
+      "Treat the user's pasted key as a per-request bearer-token only: read it from an `x-provider-key` header inside the Edge function, hold it in a local const, forward it straight to Cerebras, and never write it to `console`, Vercel logs, KV, or error payloads — wrap the handler so any throw is re-serialized with the key field stripped, which is what actually backs the \"we never store your data\" claim."
+    ]
+  },
+  "research": [
+    {
+      "name": "@cerebras/cerebras_cloud_sdk",
+      "latest": "1.64.1",
+      "registry": "npm",
+      "desc": "The official TypeScript library for the Cerebras API",
+      "homepage": "https://github.com/Cerebras/cerebras-cloud-sdk-node#readme"
+    },
+    {
+      "name": "anthropic",
+      "latest": "0.112.0",
+      "registry": "pypi",
+      "desc": "The official Python library for the anthropic API",
+      "homepage": ""
+    },
+    {
+      "name": "cerebras-cloud-sdk",
+      "latest": "1.67.0",
+      "registry": "pypi",
+      "desc": "The official Python library for the cerebras API",
+      "homepage": ""
+    },
+    {
+      "name": "duckduckgo-search",
+      "latest": "8.1.1",
+      "registry": "pypi",
+      "desc": "Search for words, documents, images, news, maps and text translation using the DuckDuckGo.com search engine.",
+      "homepage": ""
+    },
+    {
+      "name": "google-genai",
+      "latest": "2.10.0",
+      "registry": "pypi",
+      "desc": "GenAI Python SDK",
+      "homepage": ""
+    },
+    {
+      "name": "gradio",
+      "latest": "6.19.0",
+      "registry": "pypi",
+      "desc": "Python library for easily interacting with trained machine learning models",
+      "homepage": ""
+    },
+    {
+      "name": "groq",
+      "latest": "1.5.0",
+      "registry": "pypi",
+      "desc": "The official Python library for the groq API",
+      "homepage": ""
+    },
+    {
+      "name": "httpx",
+      "latest": "0.28.1",
+      "registry": "pypi",
+      "desc": "The next generation HTTP client.",
+      "homepage": ""
+    },
+    {
+      "name": "nest-asyncio",
+      "latest": "1.6.0",
+      "registry": "pypi",
+      "desc": "Patch asyncio to allow nested event loops",
+      "homepage": "https://github.com/erdewit/nest_asyncio"
+    },
+    {
+      "name": "next",
+      "latest": "16.2.9",
+      "registry": "npm",
+      "desc": "The React Framework",
+      "homepage": "https://nextjs.org"
+    },
+    {
+      "name": "openai",
+      "latest": "2.44.0",
+      "registry": "pypi",
+      "desc": "The official Python library for the openai API",
+      "homepage": ""
+    },
+    {
+      "name": "react",
+      "latest": "19.2.7",
+      "registry": "npm",
+      "desc": "React is a JavaScript library for building user interfaces.",
+      "homepage": "https://react.dev/"
+    },
+    {
+      "name": "tailwindcss",
+      "latest": "4.3.1",
+      "registry": "npm",
+      "desc": "A utility-first CSS framework for rapidly building custom user interfaces.",
+      "homepage": "https://tailwindcss.com"
+    }
+  ]
+}

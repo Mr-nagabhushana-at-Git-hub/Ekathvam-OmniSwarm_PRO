@@ -1,0 +1,35 @@
+# Architecture — Ekathvam-OmniSwarm (OmniSwarm by Ekathvam) — a dual/"Twin Engine" multi-agent orchestrator
+
+## Overview
+Two engines share one logical orchestration core implemented twice (TS for Vercel Edge, Python for Colab) behind a common UniversalLLM provider abstraction so a single code path drives Cerebras, OpenAI, Anthropic, Groq, and Gemini. Request flow: the client holds the user-pasted key in memory and sends it per-request (Engine A: browser → Edge function in the request body/header, never persisted; Engine B: Gradio textbox → in-process). The Orchestrator runs: (1) Planner — Gemma 4 31B returns a JSON plan choosing 2–5 nodes and per-node role+subtask; (2) Researcher — invokes ToolBox (web_search, run_python, diagnostics) and injects results; (3) Swarm — N role-specialized nodes (analyst/risk/strategist/builder) execute in parallel (Promise.all / asyncio.gather) with per-node error isolation and exponential backoff on 429/5xx/overload; (4) Synthesizer — merges node outputs with attribution; (5) Critic⇄Refiner — bounded loop scoring and revising the draft; (6) Extract/Run — pulls code blocks and executes them in a sandbox/VM. The structured skill-agents-mapped worker sits beneath the swarm: a typed skill registry maps roles→authorized skills and deterministically dispatches calls. A telemetry bus streams stage/node/token/latency events to the UI's Speed HUD and swarm graph. The privacy layer wraps the data path: client-side field encryption (dual-encrypted: transport TLS + payload encryption), a stateless zero-retention Edge runtime that scrubs payloads after responding, security headers, and provider retention/training opt-out flags where supported — a software TEE-equivalent honestly labeled as such. 'Delete My Data' purges all client state and any transient server artifacts and returns a verifiable confirmation. Both engines render the same latency HUD and a side-by-side Cerebras-vs-GPU benchmark by dispatching identical prompts to two providers concurrently.
+
+## Components
+- Frontend
+- Backend API
+- Database
+
+## Data flow
+
+
+## Data model
+The system is deliberately stateless and storage-free for user data. Ephemeral, in-memory/in-request objects only: ApiKeySession {provider, keyRef(in-memory only, never persisted), createdAt(ephemeral)}. RunRequest {prompt:string, attachments:[{type:'image'|'video'|'text', encodedRef, mime}], toolsEnabled:boolean, workerCount?(2-5), refineDepth(0-3), providers:[{name, forComparison:boolean}]}. Plan {nodeCount:int(2-5), nodes:[{id, role:'analyst'|'risk'|'strategist'|'builder', subtask}]}. NodeResult {nodeId, role, output, tokens, ttftMs, tokPerSec, error?}. ToolCall {tool:'web_search'|'run_python'|'diagnostic', input, output, ms}. SynthResult {draft, citations:[nodeId]}. CritiqueResult {findings:[{issue, severity}]}, RefineResult {revisedDraft, depth}. Telemetry events {runId(ephemeral), stage, nodeId?, tokens, ms, ts} streamed to the client and not durably persisted. SkillRegistryEntry {name, inputSchema, handler, allowedRoles:[role]}. No relational/NoSQL database, no user table, no key store, no prompt/output log — all user data lives only for the lifetime of the request and is scrubbed afterward; 'Delete My Data' additionally clears client-side localStorage/session/cache and any transient temp uploads.
+
+## API surface
+- POST /api/swarm — run the full pipeline; streams telemetry + final result (app/api/swarm/route.ts, Edge, accepts per-request key, never persists)
+- POST /api/swarm/plan — return the Planner's JSON plan (node count + roles) for a given task
+- POST /api/benchmark — run identical prompt on Cerebras + a GPU provider, return TTFT/tok/s for each with speedup ratio
+- POST /api/tools/web-search — proxy live DuckDuckGo search used by the Researcher
+- POST /api/tools/run-python — execute extracted code in an isolated sandbox, return stdout/stderr
+- POST /api/delete-data — purge any transient server artifacts and return a timestamped deletion confirmation
+- GET /api/health — liveness/readiness probe returning {ok:true} and engine/version info
+- GET /api/privacy/status — report current retention posture (zero-storage), enabled provider opt-out flags, and security headers
+
+## Non-functional
+- **Security:** No server-side storage of API keys, prompts, outputs, or media; keys held only in ephemeral request scope. Dual encryption: TLS in transit + client-side WebCrypto payload encryption for sensitive fields. Stateless zero-retention Edge runtime that scrubs payloads post-response. Strict security headers (CSP, HSTS, Cache-Control: no-store, X-Content-Type-Options, Referrer-Policy). Sandboxed run-python with resource/time limits and no host access. Provider requests set retention/training opt-out flags where supported, documented honestly where not. 'Delete My Data' provides verifiable, complete purge of client + transient server state. No secrets in source or notebook; alignment with India DPDP principles (no-store/no-sell/no-train).
+- **Performance:** Cerebras inference targets 300+ output tokens/sec and low TTFT; a standard 4-node swarm run completes end-to-end in under ~15s. Parallel node execution (Promise.all/asyncio.gather) keeps swarm latency ≈ slowest node, not the sum. Streaming responses surface first tokens immediately; the Speed HUD updates TTFT and tok/s live. Side-by-side benchmark dispatches both providers concurrently to fairly measure the latency delta.
+- **Scalability:** Stateless Edge functions scale horizontally on Vercel with no shared session state. Per-request isolation means concurrent users never contend over server state. Exponential backoff on 429/5xx/overload and per-node error isolation maintain throughput under provider pressure. Provider-agnostic UniversalLLM allows load distribution across Cerebras/OpenAI/Anthropic/Groq/Gemini. Engine B scales per-user via independent Colab runtimes.
+
+## Architectural decisions
+- Key is never persisted server-side: hold it in a React context + sessionStorage (not localStorage), inject it per-request as a custom header to app/api/swarm/route.ts which forwards to Cerebras and never logs it — and show a visible "Key lives in this tab only · cleared on close" badge plus a one-click "Delete my data" that wipes sessionStorage, IndexedDB, and aborts in-flight fetches.
+- BYO-key must be a stateless pass-through, not a stored secret: the key lives only in the browser, is sent per-request over TLS to app/api/swarm, held in a request-scoped variable, never written to logs/KV/env/Vercel storage — add a visible "0 bytes persisted" assertion and a request that returns the in-memory key set as empty to prove it.
+- Treat the user's pasted key as a per-request bearer-token only: read it from an `x-provider-key` header inside the Edge function, hold it in a local const, forward it straight to Cerebras, and never write it to `console`, Vercel logs, KV, or error payloads — wrap the handler so any throw is re-serialized with the key field stripped, which is what actually backs the "we never store your data" claim.
