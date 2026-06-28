@@ -115,8 +115,9 @@ async function performWebSearch(query: string): Promise<string> {
     if (res.ok) {
       const html = await res.text();
       const snippets: string[] = [];
-      const matches = html.matchAll(/<a class="result__snippet"[^>]*>([\s\S]*?)<\/a>/g);
-      for (const match of matches) {
+      const regex = /<a class="result__snippet"[^>]*>([\s\S]*?)<\/a>/g;
+      let match;
+      while ((match = regex.exec(html)) !== null) {
         snippets.push(match[1].replace(/<[^>]*>/g, "").trim());
         if (snippets.length >= 3) break;
       }
