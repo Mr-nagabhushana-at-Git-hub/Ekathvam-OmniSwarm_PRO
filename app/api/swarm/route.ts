@@ -41,7 +41,7 @@ async function callLLM(
     url = "https://api.cerebras.ai/v1/chat/completions";
     headers["Authorization"] = `Bearer ${apiKey}`;
     body = {
-      model: model === "gemma-4-31b" ? "llama-3.3-70b" : model,
+      model: model === "gemma-4-31b" ? "llama3.1-8b" : model,
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt },
@@ -163,7 +163,7 @@ async function streamMeasured(
   if (cp === "cerebras") {
     url = "https://api.cerebras.ai/v1/chat/completions";
     headers["Authorization"] = `Bearer ${apiKey}`;
-    body = { model: model === "gemma-4-31b" ? "llama-3.3-70b" : model };
+    body = { model: model === "gemma-4-31b" ? "llama3.1-8b" : model };
   } else if (cp === "groq") {
     url = "https://api.groq.com/openai/v1/chat/completions";
     headers["Authorization"] = `Bearer ${apiKey}`;
