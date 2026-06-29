@@ -1,0 +1,24 @@
+/* src/styles/obsidian.css */
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian-bg: oklch(0.12 0.01 260);
+  --color-obsidian-panel: oklch(0.18 0.02 260 / 60%);
+  --color-obsidian-border: oklch(0.25 0.02 260 / 30%);
+  --color-accent-logic: oklch(0.65 0.22 260); /* Electric Indigo */
+  --color-accent-success: oklch(0.75 0.18 150); /* Neon Emerald */
+  --color-accent-warning: oklch(0.80 0.15 85); /* Cyber Amber */
+  --color-accent-error: oklch(0.60 0.20 25); /* Plasma Red */
+}
+
+.glass-obsidian {
+  @apply bg-obsidian-panel backdrop-blur-xl border border-obsidian-border shadow-2xl;
+}
+
+.glow-indigo {
+  box-shadow: 0 0 20px oklch(0.65 0.22 260 / 20%);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 20px oklch(0.75 0.18 150 / 20%);
+}

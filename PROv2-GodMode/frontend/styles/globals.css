@@ -1,0 +1,273 @@
+<thinking>
+The user is requesting a "state-of-the-art" UI system for "OmniSwarm — GodMode V2 Ultra". 
+Key technical requirements:
+1.  **Multi-Font**: Inter (Body/UI) and Clash Display (Headings/Display).
+2.  **Multi-Theme**: Light/Dark/System support.
+3.  **Tech Stack**: Tailwind CSS v4 (Oxide), Framer Motion (Motion/React).
+4.  **ThreeJS Integration**: Design tokens specifically for glowing neon shaders (uniforms).
+5.  **Scale**: 20 Hyper-Pages (implies a need for a highly scalable, token-driven architecture).
+
+Architectural Strategy:
+- **Color Space**: Use OKLCH for P3 color support. This ensures vibrant, perceptually uniform colors across high-end displays.
+- **Tailwind v4**: Use the CSS-first `@theme` configuration.
+- **Typography**: Implement a fluid type scale using `clamp()` to ensure the "Hyper-Page" feel across all screen sizes.
+- **ThreeJS Bridge**: Create a specific set of CSS variables that can be read by JavaScript and passed into ThreeJS `Uniforms` (e.g., `--neon-primary` $\rightarrow$ `uColor`).
+- **Theming**: Implement a data-attribute based theme switcher (`data-theme="light" | "dark" | "system"`).
+
+Plan:
+1.  Define the Global CSS Architecture using Tailwind v4 syntax.
+2.  Establish the OKLCH color palette for Light and Dark modes.
+3.  Configure the Multi-Font system (Inter + Clash Display).
+4.  Create the "Neon Shader" token bridge for ThreeJS.
+5.  Define the Motion/Framer Motion transition presets for a "GodMode" feel (snappy, high-inertia).
+6.  Provide the implementation guide for the theme toggle.
+</thinking>
+
+# 🌌 OmniSwarm: GodMode V2 Ultra — UI Architecture
+
+This is the technical foundation for the OmniSwarm UI. It utilizes **Tailwind CSS v4 (Oxide)**, **OKLCH color spaces** for P3 wide-gamut support, and a **ThreeJS-ready token bridge**.
+
+## 🛠️ Technical Stack
+- **Styling**: Tailwind CSS v4 (CSS-first configuration)
+- **Animation**: `motion/react` (Framer Motion)
+- **Typography**: Clash Display (Headings) / Inter (UI/Body)
+- **Color Space**: OKLCH (Perceptually uniform, high-vibrancy)
+
+---
+
+## 🎨 Global Design System (`globals.css`)
+
+```css
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* 
+  OMNISWARM DESIGN TOKENS 
+  Using OKLCH for P3 Color Support 
+  Format: oklch(L C H / alpha)
+*/
+
+:root {
+  /* --- Core Palette (Light Mode) --- */
+  --background: oklch(0.98 0.01 240);
+  --foreground: oklch(0.15 0.02 240);
+  
+  --surface-1: oklch(0.95 0.01 240);
+  --surface-2: oklch(0.90 0.01 240);
+  
+  --primary: oklch(0.60 0.18 260);       /* Electric Blue */
+  --primary-foreground: oklch(0.98 0.01 240);
+  
+  --accent: oklch(0.70 0.20 320);        /* Neon Purple */
+  --accent-foreground: oklch(0.98 0.01 240);
+  
+  --muted: oklch(0.85 0.02 240);
+  --muted-foreground: oklch(0.45 0.02 240);
+  
+  --border: oklch(0.80 0.02 240);
+  --ring: var(--primary);
+  
+  /* --- ThreeJS Neon Shader Bridge --- 
+     These are mapped to GLSL uniforms in the ThreeJS engine
+  */
+  --neon-primary: oklch(0.60 0.18 260);
+  --neon-secondary: oklch(0.70 0.20 320);
+  --neon-glow-intensity: 1.5;
+  --neon-bloom-threshold: 0.8;
+
+  /* --- Typography --- */
+  --font-display: "Clash Display", "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* --- Layout & Radius --- */
+  --radius-base: 0.75rem;
+  --radius-sm: calc(var(--radius-base) - 4px);
+  --radius-lg: calc(var(--radius-base) + 4px);
+  --radius-full: 9999px;
+}
+
+[data-theme="dark"] {
+  /* --- Core Palette (Dark Mode) --- */
+  --background: oklch(0.12 0.02 240);
+  --foreground: oklch(0.95 0.01 240);
+  
+  --surface-1: oklch(0.16 0.02 240);
+  --surface-2: oklch(0.20 0.02 240);
+  
+  --primary: oklch(0.65 0.20 260);       /* Brighter Electric Blue */
+  --primary-foreground: oklch(0.10 0.02 240);
+  
+  --accent: oklch(0.75 0.22 320);        /* Vibrant Neon Purple */
+  --accent-foreground: oklch(0.10 0.02 240);
+  
+  --muted: oklch(0.25 0.02 240);
+  --muted-foreground: oklch(0.65 0.02 240);
+  
+  --border: oklch(0.25 0.02 240 / 50%);
+  --ring: var(--primary);
+
+  /* --- ThreeJS Neon Shader Bridge (Dark) --- */
+  --neon-primary: oklch(0.70 0.22 260);
+  --neon-secondary: oklch(0.80 0.25 320);
+  --neon-glow-intensity: 2.5;
+}
+
+@theme inline {
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  /* Typography */
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  /* Fluid Type Scale */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.7vw, 1.5rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 1vw, 2rem);
+  --text-2xl: clamp(1.5rem, 1.3rem + 1.5vw, 3rem);
+  --text-3xl: clamp(1.875rem, 1.6rem + 2vw, 4.5rem);
+
+  /* Radius */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-base);
+  --radius-lg: var(--radius-lg);
+  --radius-full: var(--radius-full);
+}
+
+/* Base Layer */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/30;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+```
+
+---
+
+## ⚡ Motion System (`motion-presets.ts`)
+
+For "GodMode" feel, we avoid linear transitions. We use high-stiffness springs for UI elements and smooth, dampened transitions for page-level shifts.
+
+```typescript
+import { Transition } from "motion/react";
+
+export const MOTION_PRESETS = {
+  // Snappy UI interactions (Buttons, Toggles)
+  snappy: {
+    type: "spring",
+    stiffness: 500,
+    damping: 30,
+    mass: 1,
+  } as Transition,
+
+  // Smooth layout shifts (Cards, Modals)
+  smooth: {
+    type: "spring",
+    stiffness: 300,
+    damping: 25,
+    mass: 1.2,
+  } as Transition,
+
+  // Cinematic reveals (Page entries, Hero sections)
+  cinematic: {
+    type: "tween",
+    ease: [0.22, 1, 0.36, 1], // Custom cubic-bezier
+    duration: 0.8,
+  } as Transition,
+
+  // Floating/Ambient (ThreeJS-like UI elements)
+  ambient: {
+    repeat: Infinity,
+    repeatType: "reverse",
+    duration: 3,
+    ease: "easeInOut",
+  } as Transition,
+};
+```
+
+---
+
+## 🌉 ThreeJS Shader Bridge Implementation
+
+To ensure the 3D scene matches the UI theme perfectly, use this utility to extract CSS tokens into ThreeJS uniforms.
+
+```typescript
+// utils/theme-bridge.ts
+import * as THREE from 'three';
+
+export const getThemeUniforms = () => {
+  const style = getComputedStyle(document.documentElement);
+  
+  // Helper to convert oklch string to ThreeJS Color
+  const parseOklch = (oklchStr: string) => {
+    // In a real impl, use a library like 'culori' to convert OKLCH -> RGB
+    // For now, we map the primary brand colors
+    return new THREE.Color(oklchStr === 'oklch(0.65 0.20 260)' ? '#4f46e5' : '#a855f7');
+  };
+
+  return {
+    uNeonPrimary: { value: parseOklch(style.getPropertyValue('--neon-primary').trim()) },
+    uNeonSecondary: { value: parseOklch(style.getPropertyValue('--neon-secondary').trim()) },
+    uGlowIntensity: { value: parseFloat(style.getPropertyValue('--neon-glow-intensity')) },
+  };
+};
+```
+
+---
+
+## 🚀 Implementation Guide
+
+### 1. Theme Toggle Logic
+Use a simple state manager or `localStorage` to toggle the `data-theme` attribute on the `<html>` element.
+
+```tsx
+const toggleTheme = (theme: 'light' | 'dark' | 'system') => {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+};
+```
+
+### 2. Typography Usage
+- **Headings**: Use `font-display` (Clash Display) for all `h1`-`h6` and large hero text.
+- **UI/Body**: Use `font-sans` (Inter) for buttons, inputs, and paragraphs.
+
+### 3. Component Architecture
+When building the 20 Hyper-Pages, follow this hierarchy:
+`Page` $\rightarrow$ `Layout` $\rightarrow$ `Section` $\rightarrow$ `Component` $\rightarrow$ `Primitive (shadcn)`.
+
+**Example Component Structure:**
+```tsx
+<motion.div 
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={MOTION_PRESETS.smooth}
+  className="bg-surface-1 border border-border p-6 rounded-lg shadow-xl"
+>
+  <h2 className="text-2xl text-primary font-display">Hyper-Module Alpha</h2>
+  <p className="text-sm text-muted-foreground font-sans">System status: Operational</p>
+</motion.div>
+```

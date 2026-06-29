@@ -41,7 +41,7 @@ async function callLLM(
     url = "https://api.cerebras.ai/v1/chat/completions";
     headers["Authorization"] = `Bearer ${apiKey}`;
     body = {
-      model: model || "gemma-4-31b",
+      model: model === "gemma-4-31b" ? "llama3.1-70b" : model,
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt },
@@ -99,6 +99,7 @@ async function callLLM(
     method: "POST",
     headers,
     body: JSON.stringify(body),
+    signal: AbortSignal.timeout(15000) // Don't hang forever
   });
 
   if (!response.ok) {
@@ -162,7 +163,7 @@ async function streamMeasured(
   if (cp === "cerebras") {
     url = "https://api.cerebras.ai/v1/chat/completions";
     headers["Authorization"] = `Bearer ${apiKey}`;
-    body = { model: model || "gemma-4-31b" };
+    body = { model: model === "gemma-4-31b" ? "llama3.1-70b" : model };
   } else if (cp === "groq") {
     url = "https://api.groq.com/openai/v1/chat/completions";
     headers["Authorization"] = `Bearer ${apiKey}`;
@@ -201,7 +202,12 @@ async function streamMeasured(
   }
 
   const start = Date.now();
-  const response = await fetch(url, { method: "POST", headers, body: JSON.stringify(body) });
+  const response = await fetch(url, { 
+    method: "POST", 
+    headers, 
+    body: JSON.stringify(body),
+    signal: AbortSignal.timeout(15000)
+  });
   if (!response.ok || !response.body) {
     const errorText = await response.text().catch(() => response.statusText);
     throw new Error(`API Error (${provider}): ${response.status} - ${errorText.slice(0, 300)}`);
