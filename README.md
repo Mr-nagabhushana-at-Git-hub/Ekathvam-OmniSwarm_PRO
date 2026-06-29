@@ -1,6 +1,6 @@
 <div align="center">
 
-# Ekathvam·OmniSwarm
+# Ekathvam·OmniSwarm: GodMode V2 Ultra
 
 ### A dual “Twin-Engine” multi-agent orchestrator on Gemma 4 31B, powered by Cerebras
 
@@ -10,7 +10,7 @@
 ![Hackathon](https://img.shields.io/badge/Cerebras_%C3%97_Gemma_4-Hackathon-5b8cff)
 ![License](https://img.shields.io/badge/license-AGPLv3-red)
 
-**The working prototype is complete and fully prepared for deployment.**
+**The working prototype of GodMode V2 Ultra is complete and deployed on Vercel.**
 
 </div>
 
