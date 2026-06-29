@@ -36,6 +36,11 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "PROv1",
+    "PROv2-GodMode",
+    "PROv2-GodMode___",
+    "prov2-godmode-live",
+    "engine-b"
   ]
 }
